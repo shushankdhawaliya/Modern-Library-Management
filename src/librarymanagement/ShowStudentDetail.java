@@ -3,6 +3,7 @@ package librarymanagement;
 
 import java.awt.HeadlessException;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -26,7 +27,7 @@ public class ShowStudentDetail extends javax.swing.JFrame {
     public ShowStudentDetail(int num2) {
         initComponents();
         try{
-           
+            setSize(Toolkit.getDefaultToolkit().getScreenSize());
             ImageIcon imicon = new ImageIcon(ClassLoader.getSystemResource("anne.png"));
             Image icon = imicon.getImage();
             setIconImage(icon);

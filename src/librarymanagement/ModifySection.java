@@ -6,6 +6,7 @@
 package librarymanagement;
 
 import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -22,9 +23,10 @@ public class ModifySection extends javax.swing.JFrame {
     public ModifySection() {
         initComponents();
         try{
-                    ImageIcon imicon = new ImageIcon(ClassLoader.getSystemResource("anne.png"));
-        Image icon = imicon.getImage();
-        setIconImage(icon);
+            setSize(Toolkit.getDefaultToolkit().getScreenSize());
+            ImageIcon imicon = new ImageIcon(ClassLoader.getSystemResource("anne.png"));
+            Image icon = imicon.getImage();
+            setIconImage(icon);
                }
                catch(NullPointerException e){
                    JOptionPane.showMessageDialog(this,e);
@@ -46,6 +48,7 @@ public class ModifySection extends javax.swing.JFrame {
         b3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         b4 = new javax.swing.JButton();
+        b5 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -59,7 +62,7 @@ public class ModifySection extends javax.swing.JFrame {
                 b1ActionPerformed(evt);
             }
         });
-        getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, 230, 70));
+        getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 230, 70));
 
         b2.setBackground(new java.awt.Color(193, 150, 90));
         b2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -69,7 +72,7 @@ public class ModifySection extends javax.swing.JFrame {
                 b2ActionPerformed(evt);
             }
         });
-        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 290, 230, 70));
+        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 280, 230, 70));
 
         b3.setBackground(new java.awt.Color(193, 150, 90));
         b3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -79,7 +82,7 @@ public class ModifySection extends javax.swing.JFrame {
                 b3ActionPerformed(evt);
             }
         });
-        getContentPane().add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 420, 230, 70));
+        getContentPane().add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 390, 230, 70));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel1.setText("Modify Section");
@@ -87,13 +90,23 @@ public class ModifySection extends javax.swing.JFrame {
 
         b4.setBackground(new java.awt.Color(193, 150, 90));
         b4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        b4.setText("Go To Librarian Section");
+        b4.setText("Go To Student Section");
         b4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b4ActionPerformed(evt);
             }
         });
-        getContentPane().add(b4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 550, 230, 70));
+        getContentPane().add(b4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 620, 230, 70));
+
+        b5.setBackground(new java.awt.Color(193, 150, 90));
+        b5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        b5.setText("Fees Management");
+        b5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(b5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 500, 230, 70));
 
         jLabel2.setBackground(new java.awt.Color(193, 150, 90));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/StudentModify.jpg"))); // NOI18N
@@ -121,6 +134,10 @@ public class ModifySection extends javax.swing.JFrame {
         new LibrarySection().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_b4ActionPerformed
+
+    private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
+        new FeesSection().setVisible(true);
+    }//GEN-LAST:event_b5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,6 +177,7 @@ public class ModifySection extends javax.swing.JFrame {
     private javax.swing.JButton b2;
     private javax.swing.JButton b3;
     private javax.swing.JButton b4;
+    private javax.swing.JButton b5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

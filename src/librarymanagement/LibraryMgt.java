@@ -1,6 +1,7 @@
 
 package librarymanagement;
 import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -12,6 +13,7 @@ import javax.swing.JOptionPane;
 public class LibraryMgt extends javax.swing.JFrame {
     public LibraryMgt() {
                try{
+                   setSize(Toolkit.getDefaultToolkit().getScreenSize());
                     ImageIcon imicon = new ImageIcon(ClassLoader.getSystemResource("anne.png"));
         Image icon = imicon.getImage();
         setIconImage(icon);

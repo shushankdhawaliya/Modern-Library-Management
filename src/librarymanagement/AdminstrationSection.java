@@ -1,5 +1,6 @@
 package librarymanagement;
 import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -16,9 +17,10 @@ public class AdminstrationSection extends javax.swing.JFrame {
     public AdminstrationSection() {
         initComponents();
         try{
-                    ImageIcon imicon = new ImageIcon(ClassLoader.getSystemResource("anne.png"));
-        Image icon = imicon.getImage();
-        setIconImage(icon);
+            setSize(Toolkit.getDefaultToolkit().getScreenSize());
+            ImageIcon imicon = new ImageIcon(ClassLoader.getSystemResource("anne.png"));
+            Image icon = imicon.getImage();
+            setIconImage(icon);
                }
                catch(NullPointerException e){
                    JOptionPane.showMessageDialog(this,e);

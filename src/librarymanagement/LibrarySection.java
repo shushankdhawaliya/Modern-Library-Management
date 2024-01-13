@@ -1,6 +1,7 @@
 package librarymanagement;
 
 import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -13,7 +14,8 @@ public class LibrarySection extends javax.swing.JFrame {
     public LibrarySection() {
         initComponents();
         try{
-                    ImageIcon imicon = new ImageIcon(ClassLoader.getSystemResource("anne.png"));
+            setSize(Toolkit.getDefaultToolkit().getScreenSize());
+            ImageIcon imicon = new ImageIcon(ClassLoader.getSystemResource("anne.png"));
         Image icon = imicon.getImage();
         setIconImage(icon);
                }

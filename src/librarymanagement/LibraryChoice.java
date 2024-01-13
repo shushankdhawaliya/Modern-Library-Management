@@ -1,6 +1,7 @@
 package librarymanagement;
 
 import java.awt.HeadlessException;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -23,7 +24,8 @@ public class LibraryChoice extends javax.swing.JFrame {
     public LibraryChoice()  {
         initComponents();
         try{
-       Class.forName("com.mysql.jdbc.Driver");
+            setSize(Toolkit.getDefaultToolkit().getScreenSize());
+            Class.forName("com.mysql.jdbc.Driver");
             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/librarymanagement","root","root");
            // JOptionPane.showMessageDialog(this,"Connection Successful");
          sp=  con.prepareStatement("select max(stuid) from addstudent");

@@ -2,6 +2,7 @@ package librarymanagement;
 
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -31,7 +32,8 @@ public class ChangeTiming extends javax.swing.JFrame {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         try{
-                    ImageIcon imicon = new ImageIcon(ClassLoader.getSystemResource("anne.png"));
+            setSize(Toolkit.getDefaultToolkit().getScreenSize());
+            ImageIcon imicon = new ImageIcon(ClassLoader.getSystemResource("anne.png"));
         Image icon = imicon.getImage();
         setIconImage(icon);
             tf2.setForeground(new Color(153,153,153));

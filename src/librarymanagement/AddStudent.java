@@ -3,6 +3,7 @@ package librarymanagement;
 import java.awt.Color;
 import java.awt.HeadlessException;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.util.Date;
 import java.sql.DriverManager;
@@ -31,7 +32,7 @@ public class AddStudent extends javax.swing.JFrame {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         try{
-            
+            setSize(Toolkit.getDefaultToolkit().getScreenSize());
             ImageIcon imicon = new ImageIcon(ClassLoader.getSystemResource("anne.png"));
             Image icon = imicon.getImage();
             setIconImage(icon);
