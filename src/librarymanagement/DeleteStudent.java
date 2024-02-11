@@ -166,7 +166,13 @@ ResultSet rs;
                 ps.setInt(1, num);
                 int result=ps.executeUpdate();
                if(result>0){
-                    JOptionPane.showMessageDialog(this,"Deleted Successful");
+                    ps=con.prepareStatement("delete from bookseat where stuid=?");
+                    ps.setInt(1, num);
+                    int resu=ps.executeUpdate();
+                    if(resu>0)
+                        JOptionPane.showMessageDialog(this,"Deleted Successful");
+                    else
+                        JOptionPane.showMessageDialog(this,"History Don't Delete");
                     t1.setText("");
                     t2.setText("");     
                }

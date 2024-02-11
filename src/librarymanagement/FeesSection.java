@@ -5,21 +5,52 @@
  */
 package librarymanagement;
 
+import java.awt.HeadlessException;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Shushank
  */
 public class FeesSection extends javax.swing.JFrame {
-
+    ArrayList al;
+    Connection con;
+    PreparedStatement ps;
+    ResultSet rs;
     /**
      * Creates new form FeesSection
      */
     public FeesSection() {
         
+        al=new ArrayList();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         initComponents();
+        try{
+            setSize(Toolkit.getDefaultToolkit().getScreenSize());
+                    ImageIcon imicon = new ImageIcon(ClassLoader.getSystemResource("anne.png"));
+        Image icon = imicon.getImage();
+        setIconImage(icon);
+        Class.forName("com.mysql.jdbc.Driver");
+        con=DriverManager.getConnection("jdbc:mysql://localhost:3306/LibraryManagement","root","root");
+        ps=con.prepareStatement("select id from Librarianpassword");
+        rs=ps.executeQuery();
+        while(rs.next()){
+            al.add(rs.getString(1));
+        }
+        }
+        catch(ClassNotFoundException|HeadlessException|SQLException e){
+            JOptionPane.showMessageDialog(this,e);
+        }
     }
 
     /**
@@ -65,11 +96,21 @@ public class FeesSection extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Back");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 520, 90, 40));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 520, 90, 40));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("Next");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 520, 90, 40));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 520, 90, 40));
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("Reset");
@@ -78,7 +119,7 @@ public class FeesSection extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 90, 40));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 520, 90, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -88,8 +129,46 @@ public class FeesSection extends javax.swing.JFrame {
     }//GEN-LAST:event_tf2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        
+        tf1.setText("");        tf2.setText("");
+
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new ModifySection().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       if(tf1.getText().equals("")||tf2.getText().equals("")){
+           JOptionPane.showMessageDialog(this,"Fill All Records");
+       }
+       else{
+           if(al.contains(tf1.getText())){
+                try{
+                    String password=null;
+                    ps=con.prepareStatement("select pass from librarianpassword where id=?");
+                    ps.setInt(1,Integer.parseInt(tf1.getText()));
+                    rs=ps.executeQuery();
+                    if(rs.next()){
+                      password=rs.getString(1);
+                    }
+                    if(password.equals(tf2.getText())){
+                        new FeesPage().setVisible(true);
+                    this.dispose();
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(this,"Wrong Password");
+                    }
+                    
+                }
+                catch(NumberFormatException | SQLException e){
+                    JOptionPane.showMessageDialog(this,e);
+                }
+           }
+           else{
+               JOptionPane.showMessageDialog(this,"Invalid Librarian Id");
+           }
+       }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

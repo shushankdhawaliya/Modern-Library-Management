@@ -82,6 +82,8 @@ public class AddStudent extends javax.swing.JFrame {
         b1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        t8 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
@@ -97,7 +99,7 @@ public class AddStudent extends javax.swing.JFrame {
                 t1ActionPerformed(evt);
             }
         });
-        getContentPane().add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 380, 40));
+        getContentPane().add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 90, 380, 40));
 
         t2.setBackground(new java.awt.Color(193, 150, 90));
         t2.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +107,7 @@ public class AddStudent extends javax.swing.JFrame {
                 t2ActionPerformed(evt);
             }
         });
-        getContentPane().add(t2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, 380, 40));
+        getContentPane().add(t2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 380, 40));
 
         t3.setBackground(new java.awt.Color(193, 150, 90));
         t3.addActionListener(new java.awt.event.ActionListener() {
@@ -113,23 +115,23 @@ public class AddStudent extends javax.swing.JFrame {
                 t3ActionPerformed(evt);
             }
         });
-        getContentPane().add(t3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, 380, 40));
+        getContentPane().add(t3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 380, 40));
 
         t4.setBackground(new java.awt.Color(193, 150, 90));
-        getContentPane().add(t4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 340, 380, 40));
+        getContentPane().add(t4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, 380, 40));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Student Details");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, -1, -1));
 
         t5.setBackground(new java.awt.Color(193, 150, 90));
-        getContentPane().add(t5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, 380, 40));
+        getContentPane().add(t5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 410, 380, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Name");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, 60, 20));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, 60, 20));
 
         t6.setBackground(new java.awt.Color(193, 150, 90));
         t6.setText("yyyy-MM-dd");
@@ -146,32 +148,32 @@ public class AddStudent extends javax.swing.JFrame {
                 t6ActionPerformed(evt);
             }
         });
-        getContentPane().add(t6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 500, 380, 40));
+        getContentPane().add(t6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 380, 40));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Father's Name");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 110, 20));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, 110, 20));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Address");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, 70, 20));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 70, 20));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Contact No");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 90, 30));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 410, 90, 30));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Join Date");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 510, 90, 20));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 490, 90, 20));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Student Id");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 100, 30));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 100, 30));
 
         b1.setBackground(new java.awt.Color(193, 150, 90));
         b1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -203,6 +205,14 @@ public class AddStudent extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 620, 120, 40));
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Fees");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 560, 90, 20));
+
+        t8.setBackground(new java.awt.Color(193, 150, 90));
+        getContentPane().add(t8, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 550, 380, 40));
+
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/AddStudent.jpg"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1430, 740));
@@ -227,10 +237,11 @@ public class AddStudent extends javax.swing.JFrame {
     }//GEN-LAST:event_t6ActionPerformed
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
-       int result;
+
        long cont;
        String name,fname,date,address;
-       if(t2.getText().equals("")||t3.getText().equals("")||t4.getText().equals("")||t5.getText().equals("")||t6.getText().equals("")){
+       int fees;
+       if(t2.getText().equals("")||t3.getText().equals("")||t4.getText().equals("")||t5.getText().equals("")||t6.getText().equals("")||t8.getText().equals("")){
                 JOptionPane.showMessageDialog(this,"Fill All Data");
             }
             else{
@@ -239,7 +250,7 @@ public class AddStudent extends javax.swing.JFrame {
         address=t4.getText();
         cont=Long.parseLong(t5.getText());
         date=t6.getText();
-        
+        fees=Integer.parseInt(t8.getText());
      
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -247,13 +258,14 @@ public class AddStudent extends javax.swing.JFrame {
             Date date2 = dateFormat.parse(date);
            java.sql.Date sqlDate = new java.sql.Date(date2.getTime());
            
-            ps=con.prepareStatement("insert into addstudent values(?,?,?,?,?,?)");
+            ps=con.prepareStatement("insert into addstudent values(?,?,?,?,?,?,?)");
             ps.setInt(1,stuid);
             ps.setString(2,name);
             ps.setString(3,fname);
             ps.setString(4,address);
             ps.setLong(5, cont);
             ps.setDate(6,sqlDate);
+            ps.setInt(7, fees);
             int res=ps.executeUpdate();
             if(res<0){
                 JOptionPane.showMessageDialog(this,"Failed to Add student");
@@ -287,6 +299,7 @@ public class AddStudent extends javax.swing.JFrame {
             t4.setText("");
             t5.setText("");
             t6.setText("");
+            t8.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -340,6 +353,7 @@ public class AddStudent extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField t1;
     private javax.swing.JTextField t2;
@@ -347,5 +361,6 @@ public class AddStudent extends javax.swing.JFrame {
     private javax.swing.JTextField t4;
     private javax.swing.JTextField t5;
     private javax.swing.JTextField t6;
+    private javax.swing.JTextField t8;
     // End of variables declaration//GEN-END:variables
 }

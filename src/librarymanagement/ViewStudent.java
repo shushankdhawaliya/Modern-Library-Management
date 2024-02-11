@@ -36,15 +36,15 @@ public class ViewStudent extends javax.swing.JFrame {
             DefaultTableModel tbl=(DefaultTableModel) tb.getModel();
             tbl.setRowCount(0);
             while(rs.next()){
-               tbl.addRow(new String[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6)});
+               tbl.addRow(new String[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7)});
             }
             tbl.addColumn("Timing");
             ps=con.prepareStatement("select timing from bookseat");
             rs=ps.executeQuery();  
-           tbl.setColumnCount(7);           
+           tbl.setColumnCount(8);           
             int i=0;
             while(rs.next()){
-            tbl.setValueAt(rs.getString(1),i,6);
+            tbl.setValueAt(rs.getString(1),i,7);
             i++;
             }
         }
@@ -71,13 +71,13 @@ public class ViewStudent extends javax.swing.JFrame {
         tb.setAutoCreateRowSorter(true);
         tb.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Student Id", "Name", "Father's Name", "Address", "Contact No", "Joining Date", "Timing"
+                "Student Id", "Name", "Father's Name", "Address", "Contact No", "Joining Date", "Fees", "Timing"
             }
         ));
         jScrollPane1.setViewportView(tb);
