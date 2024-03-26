@@ -22,8 +22,12 @@ public class LibrarianPassword extends javax.swing.JFrame {
     /**
      * Creates new form LibrarianPassword
      */
-    public LibrarianPassword() {
+    public LibrarianPassword(int id) {
         initComponents();
+        t1.setText(String.valueOf(id));
+        t1.setEditable(false);
+        t2.requestFocus();
+        
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         try{
             setSize(Toolkit.getDefaultToolkit().getScreenSize());
@@ -37,6 +41,10 @@ public class LibrarianPassword extends javax.swing.JFrame {
         catch(ClassNotFoundException | SQLException e){
             JOptionPane.showMessageDialog(this, e);
         }
+    }
+
+    private LibrarianPassword() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -183,7 +191,7 @@ public class LibrarianPassword extends javax.swing.JFrame {
     }//GEN-LAST:event_b1ActionPerformed
 
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
-            t1.setText("");
+            t2.requestFocus();
             t2.setText("");
             t3.setText("");
     }//GEN-LAST:event_b2ActionPerformed

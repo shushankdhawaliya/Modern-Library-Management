@@ -91,6 +91,11 @@ public class ChangeAddress extends javax.swing.JFrame {
                 tf1ActionPerformed(evt);
             }
         });
+        tf1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tf1KeyTyped(evt);
+            }
+        });
         getContentPane().add(tf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 210, 460, 40));
 
         tf3.setBackground(new java.awt.Color(193, 150, 90));
@@ -153,6 +158,8 @@ public class ChangeAddress extends javax.swing.JFrame {
         catch(HeadlessException | SQLException e){
             JOptionPane.showMessageDialog(this,e);
         }
+        tf1.setText("");
+        tf3.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 }
     private void tf3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf3ActionPerformed
@@ -170,6 +177,12 @@ public class ChangeAddress extends javax.swing.JFrame {
         new ModifySection().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void tf1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf1KeyTyped
+ if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_tf1KeyTyped
 
     /**
      * @param args the command line arguments

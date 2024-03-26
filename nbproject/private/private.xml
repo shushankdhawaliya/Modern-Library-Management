@@ -3,7 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Shushank/Documents/NetBeansProjects/LibraryManagement/src/librarymanagement/DeleteStudent.java</file>
+            <file>file:/C:/Users/Shushank/Documents/NetBeansProjects/LibraryManagement/src/librarymanagement/AddLibrarian.java</file>
+            <file>file:/C:/Users/Shushank/Documents/NetBeansProjects/LibraryManagement/src/librarymanagement/ModifySection.java</file>
+            <file>file:/C:/Users/Shushank/Documents/NetBeansProjects/LibraryManagement/src/librarymanagement/LibrarySection.java</file>
+            <file>file:/C:/Users/Shushank/Documents/NetBeansProjects/LibraryManagement/src/librarymanagement/AdminstrationSection.java</file>
+            <file>file:/C:/Users/Shushank/Documents/NetBeansProjects/LibraryManagement/src/librarymanagement/FeesSection.java</file>
+            <file>file:/C:/Users/Shushank/Documents/NetBeansProjects/LibraryManagement/src/librarymanagement/AddStudent.java</file>
+            <file>file:/C:/Users/Shushank/Documents/NetBeansProjects/LibraryManagement/src/librarymanagement/BookSeat2.java</file>
+            <file>file:/C:/Users/Shushank/Documents/NetBeansProjects/LibraryManagement/src/librarymanagement/LibrarianLogin.java</file>
+            <file>file:/C:/Users/Shushank/Documents/NetBeansProjects/LibraryManagement/src/librarymanagement/FeesSec.java</file>
+            <file>file:/C:/Users/Shushank/Documents/NetBeansProjects/LibraryManagement/src/librarymanagement/AdminstrationLogin.java</file>
         </group>
     </open-files>
 </project-private>

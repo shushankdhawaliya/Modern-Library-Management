@@ -76,6 +76,11 @@ ArrayList al=new ArrayList();
                 t1ActionPerformed(evt);
             }
         });
+        t1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                t1KeyTyped(evt);
+            }
+        });
         getContentPane().add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 230, 410, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -94,7 +99,7 @@ ArrayList al=new ArrayList();
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 430, 130, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 470, 130, 40));
 
         jButton2.setBackground(new java.awt.Color(193, 150, 90));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -104,7 +109,7 @@ ArrayList al=new ArrayList();
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 430, 130, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 470, 130, 40));
 
         b3.setBackground(new java.awt.Color(193, 150, 90));
         b3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -114,7 +119,7 @@ ArrayList al=new ArrayList();
                 b3ActionPerformed(evt);
             }
         });
-        getContentPane().add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 430, 140, 40));
+        getContentPane().add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 470, 140, 40));
 
         t2.setBackground(new java.awt.Color(193, 150, 90));
         t2.addActionListener(new java.awt.event.ActionListener() {
@@ -191,6 +196,12 @@ ArrayList al=new ArrayList();
     private void t2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_t2ActionPerformed
+
+    private void t1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t1KeyTyped
+if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_t1KeyTyped
 
     /**
      * @param args the command line arguments

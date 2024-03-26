@@ -14,14 +14,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Shushank
  */
-public class ViewFeesHistory extends javax.swing.JFrame {
+public class EditAdmiinCheck extends javax.swing.JFrame {
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
     /**
      * Creates new form ViewLibrarian
      */
-    public ViewFeesHistory(String id) {
+    public EditAdmiinCheck() {
         
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -32,19 +32,22 @@ public class ViewFeesHistory extends javax.swing.JFrame {
             setIconImage(icon);              
             Class.forName("com.mysql.jdbc.Driver");
             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/librarymanagement","root","root");
-            ps=con.prepareStatement("select * from feestable where stuid =?");
-            ps.setString(1, id);
+            ps=con.prepareStatement("select * from adminstrationlogin");
             rs=ps.executeQuery();
             DefaultTableModel tbl=(DefaultTableModel) tb.getModel();
             tbl.setRowCount(0);
             while(rs.next()){
-               tbl.addRow(new String[]{rs.getString(1),rs.getString(2),rs.getString(3)});
+               tbl.addRow(new String[]{rs.getString(1),rs.getString(2)});
             }
             
         }
         catch(ClassNotFoundException | SQLException e){
             JOptionPane.showMessageDialog(this,"Table Not Found");
         }
+    }
+
+    private EditAdmiinCheck(String String) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -58,13 +61,13 @@ public class ViewFeesHistory extends javax.swing.JFrame {
         tb.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         tb.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Stuid Id", "Fees", "Date"
+                "UserName", "Password"
             }
         ));
         jScrollPane1.setViewportView(tb);
@@ -85,6 +88,7 @@ public class ViewFeesHistory extends javax.swing.JFrame {
 
     /**
      * @param args the command line arguments
+     * @param String
      */
     public static void main(String args[], String String) {
         /* Set the Nimbus look and feel */
@@ -100,20 +104,22 @@ public class ViewFeesHistory extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewFeesHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditAdmiinCheck.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewFeesHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditAdmiinCheck.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewFeesHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditAdmiinCheck.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewFeesHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditAdmiinCheck.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new ViewFeesHistory(String).setVisible(true);
+            new EditAdmiinCheck().setVisible(true);
         });
     }
 

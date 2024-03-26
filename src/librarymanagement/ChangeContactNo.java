@@ -81,7 +81,7 @@ public class ChangeContactNo extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Enter New Address");
+        jLabel3.setText("Enter New Contact No");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, -1, 20));
 
         tf1.setBackground(new java.awt.Color(193, 150, 90));
@@ -90,12 +90,22 @@ public class ChangeContactNo extends javax.swing.JFrame {
                 tf1ActionPerformed(evt);
             }
         });
+        tf1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tf1KeyTyped(evt);
+            }
+        });
         getContentPane().add(tf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 170, 430, 40));
 
         tf3.setBackground(new java.awt.Color(193, 150, 90));
         tf3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf3ActionPerformed(evt);
+            }
+        });
+        tf3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tf3KeyTyped(evt);
             }
         });
         getContentPane().add(tf3, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, 430, 40));
@@ -156,7 +166,7 @@ public class ChangeContactNo extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tf3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf3ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_tf3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -168,6 +178,18 @@ public class ChangeContactNo extends javax.swing.JFrame {
             new ModifySection().setVisible(true);
             this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void tf1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf1KeyTyped
+ if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_tf1KeyTyped
+
+    private void tf3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf3KeyTyped
+        if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_tf3KeyTyped
 
     /**
      * @param args the command line arguments

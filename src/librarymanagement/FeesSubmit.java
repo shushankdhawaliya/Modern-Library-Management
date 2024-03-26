@@ -10,6 +10,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JFrame;
@@ -24,27 +26,63 @@ public class FeesSubmit extends javax.swing.JFrame {
      PreparedStatement ps;
      ResultSet rs;
      ArrayList al;
+     int stuid,seatnum;
+     String Name;
     /**
      * Creates new form FeesSubmit
      */
-    public FeesSubmit() {
+    public FeesSubmit(int num) {
         try{
             al=new ArrayList();
+            
             this.setExtendedState(JFrame.MAXIMIZED_BOTH);
             this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
             initComponents();
+            //JOptionPane.showMessageDialog(this,"First Line of Fees Submit");
             Class.forName("com.mysql.jdbc.Driver");
             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/librarymanagement","root","root");
-            ps=con.prepareStatement("select stuid from addstudent ");
-            rs=ps.executeQuery();
-            while(rs.next()){
-                al.add(rs.getInt(1));
+            tf1.setEditable(false);
+            tf2.setEditable(false);
+            tf3.setEditable(false);
+            if(num<=104){
+                //if num is less than 104 it means it is seatNum
+               ps=con.prepareStatement("select addstudent.stuid, addstudent.name, bookseat.seatnum from addstudent inner join bookseat on addstudent.stuid = bookseat.stuid and bookseat.seatnum =?");
+               ps.setInt(1,num);
+               rs= ps.executeQuery();
+               if(rs.next()){
+                 stuid= rs.getInt(1);
+                 Name = rs.getString(2);
+                 seatnum= rs.getInt(3);
+               }
+               else{
+                   JOptionPane.showMessageDialog(this,"Data Not Found");
+               }
             }
+            else{
+                ps=con.prepareStatement("select addstudent.stuid, addstudent.name, bookseat.seatnum from addstudent inner join bookseat on addstudent.stuid = bookseat.stuid and addstudent.stuid =?");
+               ps.setInt(1,num);
+               rs= ps.executeQuery();
+               if(rs.next()){
+                 stuid= rs.getInt(1);
+                 Name = rs.getString(2);
+                 seatnum= rs.getInt(3);
+               }
+               else{
+                   JOptionPane.showMessageDialog(this,"Data Not Found");
+               }
+            }
+            tf1.setText(String.valueOf(stuid));
+            tf2.setText(Name);
+            tf3.setText(String.valueOf(seatnum));
             
         }
         catch(HeadlessException | ClassNotFoundException | SQLException e){
             JOptionPane.showMessageDialog(this, e);
         }
+    }
+
+    private FeesSubmit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -68,9 +106,8 @@ public class FeesSubmit extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         tf5 = new javax.swing.JTextField();
-        Back = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Fees Submit");
 
@@ -83,6 +120,23 @@ public class FeesSubmit extends javax.swing.JFrame {
         tf1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf1ActionPerformed(evt);
+            }
+        });
+        tf1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tf1KeyTyped(evt);
+            }
+        });
+
+        tf2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tf2KeyTyped(evt);
+            }
+        });
+
+        tf3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tf3KeyTyped(evt);
             }
         });
 
@@ -112,10 +166,9 @@ public class FeesSubmit extends javax.swing.JFrame {
 
         jLabel6.setText("Fees");
 
-        Back.setText("Back");
-        Back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackActionPerformed(evt);
+        tf5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tf5KeyTyped(evt);
             }
         });
 
@@ -150,12 +203,12 @@ public class FeesSubmit extends javax.swing.JFrame {
                 .addContainerGap(118, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Back)
-                .addGap(95, 95, 95)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel1))
-                .addGap(249, 249, 249))
+                .addComponent(jLabel1)
+                .addGap(256, 256, 256))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(242, 242, 242)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,22 +227,17 @@ public class FeesSubmit extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(tf3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel5))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(tf4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(tf4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(Back))
-                .addGap(24, 24, 24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(32, 32, 32))
         );
 
         pack();
@@ -201,51 +249,78 @@ public class FeesSubmit extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
          try{            
-            if(tf1.getText().equals("")||tf2.getText().equals("")||tf3.getText().equals("")||tf4.getText().equals("")||tf5.getText().equals("")){
-                JOptionPane.showMessageDialog(this, "Please Fill All Fields");
+            if(tf5.getText().equals("")){
+                JOptionPane.showMessageDialog(this, "Please Add Fees");
+                
+            }
+            else if(tf4.getText().equals("yyyy-MM-dd")){
+                LocalDate currentDate = LocalDate.now();
+                 // Format the date (optional)
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                String formattedDate = currentDate.format(formatter);
+                boolean flag=true;
+                       int fees=Integer.parseInt(tf5.getText());
+                        int oriFees=0;
+                        ps=con.prepareStatement("select TotalFees from addstudent where stuid = ?");
+                        ps.setInt(1,stuid);
+                        rs=ps.executeQuery();
+                        if(rs.next()){
+                            oriFees=rs.getInt(1);
+                        }
+                        oriFees=oriFees-fees;
+                        ps=con.prepareStatement("update addstudent set TotalFees = ? where stuid =? ");
+                        ps.setInt(1, oriFees);
+                        ps.setInt(2,stuid);
+                        int result=ps.executeUpdate();
+                        if(result<0)
+                            flag=false;
+                            
+                        ps=con.prepareStatement("insert into feestable values(?,?,?)");
+                        ps.setInt(1, stuid);
+                        ps.setInt(2,fees);
+                        ps.setString(3,formattedDate);
+                        int rs=ps.executeUpdate();
+                        if(rs<0)
+                           flag=false;
+                            if(!flag)
+                            JOptionPane.showMessageDialog(this,"Unsuccessful");
+                           
+                            JOptionPane.showMessageDialog(this,"Now Fees is "+oriFees);
+                             tf1.setText("");
+                            tf2.setText("");
+                            tf3.setText("");
+                            tf4.setText("");
+                            tf5.setText("");
+                            tf1.requestFocus();
+                                          
             }
             else{
-                String name=null;
-                int seatNum=0;
-                int stuId=Integer.parseInt(tf1.getText());
                 String date=tf4.getText();
                 boolean flag=true;
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             // Parse the string to obtain a Date object
                 Date date2 = dateFormat.parse(date);
                 java.sql.Date sqlDate = new java.sql.Date(date2.getTime());
-                if(al.contains(stuId)){              
-                    ps=con.prepareStatement("select name from addstudent where stuid=?");
-                    ps.setInt(1,Integer.parseInt(tf1.getText()));
-                    rs=ps.executeQuery();
-                    if(rs.next()){
-                        name=rs.getString(1);
-                    }
-                    ps=con.prepareStatement("select seatnum from bookseat where stuid=?");
-                    ps.setInt(1,stuId);
-                    rs=ps.executeQuery();
-                    if(rs.next()){
-                        seatNum=rs.getInt(1);
-                    }
-                    if(tf2.getText().toLowerCase().replaceAll(" ", "").equals(name.toLowerCase().replaceAll(" ",""))&&seatNum==Integer.parseInt(tf3.getText())){
+               
+                   
                         int fees=Integer.parseInt(tf5.getText());
                         int oriFees=0;
-                        ps=con.prepareStatement("select fees from addstudent where stuid = ?");
-                        ps.setInt(1,stuId);
+                        ps=con.prepareStatement("select TotalFees from addstudent where stuid = ?");
+                        ps.setInt(1,stuid);
                         rs=ps.executeQuery();
                         if(rs.next()){
                             oriFees=rs.getInt(1);
                         }
                         oriFees=oriFees-fees;
-                        ps=con.prepareStatement("update addstudent set fees = ? where stuid =? ");
+                        ps=con.prepareStatement("update addstudent set TotalFees = ? where stuid =? ");
                         ps.setInt(1, oriFees);
-                        ps.setInt(2,stuId);
+                        ps.setInt(2,stuid);
                         int result=ps.executeUpdate();
                         if(result<0)
                             flag=false;
                             
                         ps=con.prepareStatement("insert into feestable values(?,?,?)");
-                        ps.setInt(1, stuId);
+                        ps.setInt(1, stuid);
                         ps.setInt(2,fees);
                         ps.setDate(3,sqlDate);
                         int rs=ps.executeUpdate();
@@ -254,8 +329,8 @@ public class FeesSubmit extends javax.swing.JFrame {
                             if(!flag)
                             JOptionPane.showMessageDialog(this,"Unsuccessful");
                            
-                            JOptionPane.showMessageDialog(this,"Fees left "+oriFees);
-                             tf1.setText("");
+                            JOptionPane.showMessageDialog(this,"Thank You\nNow your Fees is "+oriFees);
+                            tf1.setText("");
                             tf2.setText("");
                             tf3.setText("");
                             tf4.setText("");
@@ -264,19 +339,13 @@ public class FeesSubmit extends javax.swing.JFrame {
                            
 
                     }
-                    else{
-                        JOptionPane.showMessageDialog(this, "Check Student id, name or SeatNum Properly");
-                    }
-                }
-                else{
-                    JOptionPane.showMessageDialog(this,"Wrong Student Id");
-                }
-            }
-        }
+                    new FeesSec().setVisible(true);
+                    this.dispose();
+         }
+          
         catch(HeadlessException | NumberFormatException | SQLException | ParseException e){
             JOptionPane.showMessageDialog(this,e);
-        } 
-        
+        }         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tf4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf4ActionPerformed
@@ -298,10 +367,30 @@ public class FeesSubmit extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tf4FocusLost
 
-    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
-        new FeesPage().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_BackActionPerformed
+    private void tf1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf1KeyTyped
+if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_tf1KeyTyped
+
+    private void tf2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf2KeyTyped
+        char ch = evt.getKeyChar();
+        if(!((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')||(int)ch==32||(int)ch==8)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_tf2KeyTyped
+
+    private void tf3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf3KeyTyped
+        if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_tf3KeyTyped
+
+    private void tf5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf5KeyTyped
+if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_tf5KeyTyped
 
     /**
      * @param args the command line arguments
@@ -339,7 +428,6 @@ public class FeesSubmit extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Back;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

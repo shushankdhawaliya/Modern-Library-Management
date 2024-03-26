@@ -14,14 +14,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Shushank
  */
-public class ViewLibrarian extends javax.swing.JFrame {
+public class ViewAllStudentFees extends javax.swing.JFrame {
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
     /**
      * Creates new form ViewLibrarian
      */
-    public ViewLibrarian() {
+    public ViewAllStudentFees() {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         try{   
@@ -31,16 +31,26 @@ public class ViewLibrarian extends javax.swing.JFrame {
             setIconImage(icon);              
             Class.forName("com.mysql.jdbc.Driver");
             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/librarymanagement","root","root");
-            ps=con.prepareStatement("select * from addlibrarian");
+            ps=con.prepareStatement("select addstudent.stuid, addstudent.name, bookseat.seatnum , addstudent.TotalFees, bookseat.timing from addstudent inner join  bookseat on addstudent.stuid= bookseat.stuid");
             rs=ps.executeQuery();
             DefaultTableModel tbl=(DefaultTableModel) tb.getModel();
             tbl.setRowCount(0);
+            String st = null;
             while(rs.next()){
-               tbl.addRow(new String[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6)});
+                if(rs.getString(5).equals("100")){
+                    st="Full Day";                    
+                }
+                else  if(rs.getString(5).equals("5")){
+                    st="Morning Shift";                   
+                }
+                else if(rs.getString(5).equals("2")){
+                    st="Evening Shift";                    
+                }
+               tbl.addRow(new String[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),st});
             }
         }
         catch(ClassNotFoundException | SQLException e){
-            JOptionPane.showMessageDialog(this,"Table Not Found");
+            JOptionPane.showMessageDialog(this,e);
         }
     }
     @SuppressWarnings("unchecked")
@@ -55,13 +65,13 @@ public class ViewLibrarian extends javax.swing.JFrame {
         tb.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         tb.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Librarian Id", "Name", "Father's Name", "Address", "Email", "Phone Number"
+                "Student Id", "Name", "Seat Num.", "Fees", "Timing"
             }
         ));
         jScrollPane1.setViewportView(tb);
@@ -97,19 +107,20 @@ public class ViewLibrarian extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewLibrarian.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewAllStudentFees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewLibrarian.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewAllStudentFees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewLibrarian.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewAllStudentFees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewLibrarian.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewAllStudentFees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new ViewLibrarian().setVisible(true);
+            new ViewAllStudentFees().setVisible(true);
         });
     }
 

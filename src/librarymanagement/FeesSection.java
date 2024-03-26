@@ -66,10 +66,10 @@ public class FeesSection extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         tf1 = new javax.swing.JTextField();
-        tf2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        tf2 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -79,20 +79,13 @@ public class FeesSection extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("Stu. Id");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 70, 38));
+        jLabel2.setText("Librarian Id");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 110, 38));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Librarian Pass.");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 150, -1));
         getContentPane().add(tf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 390, 38));
-
-        tf2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(tf2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 410, 390, 35));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Back");
@@ -121,16 +114,18 @@ public class FeesSection extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 520, 90, 40));
 
+        tf2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tf2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 400, 390, 35));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tf2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf2ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         tf1.setText("");        tf2.setText("");
-
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -152,8 +147,8 @@ public class FeesSection extends javax.swing.JFrame {
                       password=rs.getString(1);
                     }
                     if(password.equals(tf2.getText())){
-                        new FeesPage().setVisible(true);
-                    this.dispose();
+                        new FeesSec().setVisible(true);
+                        this.dispose();
                     }
                     else{
                         JOptionPane.showMessageDialog(this,"Wrong Password");
@@ -169,6 +164,10 @@ public class FeesSection extends javax.swing.JFrame {
            }
        }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void tf2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf2ActionPerformed
+       
+    }//GEN-LAST:event_tf2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -213,6 +212,6 @@ public class FeesSection extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField tf1;
-    private javax.swing.JTextField tf2;
+    private javax.swing.JPasswordField tf2;
     // End of variables declaration//GEN-END:variables
 }

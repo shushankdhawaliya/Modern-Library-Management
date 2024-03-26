@@ -97,6 +97,11 @@ public class ChangeTiming extends javax.swing.JFrame {
                 tf1ActionPerformed(evt);
             }
         });
+        tf1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tf1KeyTyped(evt);
+            }
+        });
         getContentPane().add(tf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 430, 40));
 
         tf3.setBackground(new java.awt.Color(193, 150, 90));
@@ -137,7 +142,7 @@ public class ChangeTiming extends javax.swing.JFrame {
                 resetbtnActionPerformed(evt);
             }
         });
-        getContentPane().add(resetbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 520, 120, 40));
+        getContentPane().add(resetbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 520, 120, 40));
 
         submitbtn.setBackground(new java.awt.Color(193, 150, 90));
         submitbtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -147,7 +152,7 @@ public class ChangeTiming extends javax.swing.JFrame {
                 submitbtnActionPerformed(evt);
             }
         });
-        getContentPane().add(submitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 520, 130, 40));
+        getContentPane().add(submitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 520, 130, 40));
 
         backbtn.setBackground(new java.awt.Color(193, 150, 90));
         backbtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -273,6 +278,12 @@ public class ChangeTiming extends javax.swing.JFrame {
         new ModifySection().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backbtnActionPerformed
+
+    private void tf1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf1KeyTyped
+if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_tf1KeyTyped
 
     /**
      * @param args the command line arguments

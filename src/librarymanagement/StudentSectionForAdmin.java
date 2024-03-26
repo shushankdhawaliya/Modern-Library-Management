@@ -5,13 +5,12 @@ import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author Shushank
  */
-public class LibrarySection extends javax.swing.JFrame {
-    public LibrarySection() {
+public class StudentSectionForAdmin extends javax.swing.JFrame {
+    public StudentSectionForAdmin() {
         initComponents();
         try{
             setSize(Toolkit.getDefaultToolkit().getScreenSize());
@@ -81,7 +80,7 @@ public class LibrarySection extends javax.swing.JFrame {
 
         jButton5.setBackground(new java.awt.Color(193, 150, 90));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton5.setText("LogOut");
+        jButton5.setText("Go Back Adminstrator Section");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -101,7 +100,7 @@ public class LibrarySection extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-            new LibraryMgt().setVisible(true);
+            new AdminstrationSection().setVisible(true);
             this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -141,19 +140,20 @@ public class LibrarySection extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LibrarySection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentSectionForAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LibrarySection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentSectionForAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LibrarySection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentSectionForAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LibrarySection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentSectionForAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new LibrarySection().setVisible(true);
+            new StudentSectionForAdmin().setVisible(true);
         });
     }
 

@@ -3,7 +3,6 @@ package librarymanagement;
 
 import java.awt.HeadlessException;
 import java.awt.Image;
-import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -27,7 +26,7 @@ public class ShowStudentDetail extends javax.swing.JFrame {
     public ShowStudentDetail(int num2) {
         initComponents();
         try{
-            setSize(Toolkit.getDefaultToolkit().getScreenSize());
+//            setSize(Toolkit.getDefaultToolkit().getScreenSize());
             ImageIcon imicon = new ImageIcon(ClassLoader.getSystemResource("anne.png"));
             Image icon = imicon.getImage();
             setIconImage(icon);
@@ -95,6 +94,16 @@ public class ShowStudentDetail extends javax.swing.JFrame {
 
         tf1.setEditable(false);
         tf1.setBackground(new java.awt.Color(193, 150, 90));
+        tf1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf1ActionPerformed(evt);
+            }
+        });
+        tf1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tf1KeyTyped(evt);
+            }
+        });
         getContentPane().add(tf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 81, 143, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -124,6 +133,11 @@ public class ShowStudentDetail extends javax.swing.JFrame {
 
         tf2.setEditable(false);
         tf2.setBackground(new java.awt.Color(193, 150, 90));
+        tf2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tf2KeyTyped(evt);
+            }
+        });
         getContentPane().add(tf2, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 119, 143, -1));
 
         tf3.setEditable(false);
@@ -175,6 +189,18 @@ public class ShowStudentDetail extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tf1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf1KeyTyped
+
+    }//GEN-LAST:event_tf1KeyTyped
+
+    private void tf1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf1ActionPerformed
+       
+    }//GEN-LAST:event_tf1ActionPerformed
+
+    private void tf2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf2KeyTyped
+         
+    }//GEN-LAST:event_tf2KeyTyped
 
     /**
      * @param args the command line arguments

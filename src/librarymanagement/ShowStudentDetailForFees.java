@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  *
  * @author Shushank
  */
-public class ShowStudentDetail extends javax.swing.JFrame {
+public class ShowStudentDetailForFees extends javax.swing.JFrame {
     Connection con;
     PreparedStatement ps;
     ResultSet  rs;
@@ -24,10 +24,10 @@ public class ShowStudentDetail extends javax.swing.JFrame {
      * Creates new form ShowStudentDetail
      * @param num2
      */
-    public ShowStudentDetail(int num2) {
+    public ShowStudentDetailForFees(int num2) {
         initComponents();
         try{
-            setSize(Toolkit.getDefaultToolkit().getScreenSize());
+//            setSize(Toolkit.getDefaultToolkit().getScreenSize());
             ImageIcon imicon = new ImageIcon(ClassLoader.getSystemResource("anne.png"));
             Image icon = imicon.getImage();
             setIconImage(icon);
@@ -43,8 +43,8 @@ public class ShowStudentDetail extends javax.swing.JFrame {
                 tf3.setText(rs.getString(3));
                 tf4.setText(rs.getString(4));
                 tf5.setText(String.valueOf(rs.getLong(5)));
-                tf6.setText(String.valueOf(rs.getDate(6)));
-                
+                tf7.setText(String.valueOf(rs.getDate(6)));
+                tf6.setText(rs.getString(7));
             }
             else{
                 JOptionPane.showMessageDialog(this,"No Table Found");
@@ -56,7 +56,7 @@ public class ShowStudentDetail extends javax.swing.JFrame {
         
     }
 
-    private ShowStudentDetail() {
+    private ShowStudentDetailForFees() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -83,6 +83,8 @@ public class ShowStudentDetail extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         tf6 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        tf7 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -146,11 +148,11 @@ public class ShowStudentDetail extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Joining Date");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 271, 95, 19));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 95, 19));
 
         tf6.setEditable(false);
         tf6.setBackground(new java.awt.Color(193, 150, 90));
-        getContentPane().add(tf6, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 271, 143, -1));
+        getContentPane().add(tf6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 143, -1));
 
         jButton1.setBackground(new java.awt.Color(193, 150, 90));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -160,10 +162,19 @@ public class ShowStudentDetail extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 320, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Total Fees");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 95, 19));
+
+        tf7.setEditable(false);
+        tf7.setBackground(new java.awt.Color(193, 150, 90));
+        getContentPane().add(tf7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 143, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/StudentDetail.jpg"))); // NOI18N
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 370));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 400, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -193,19 +204,20 @@ public class ShowStudentDetail extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ShowStudentDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ShowStudentDetailForFees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ShowStudentDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ShowStudentDetailForFees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ShowStudentDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ShowStudentDetailForFees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ShowStudentDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ShowStudentDetailForFees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new ShowStudentDetail().setVisible(true);
+            new ShowStudentDetailForFees().setVisible(true);
         });
     }
 
@@ -219,11 +231,13 @@ public class ShowStudentDetail extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     public javax.swing.JTextField tf1;
     public javax.swing.JTextField tf2;
     public javax.swing.JTextField tf3;
     public javax.swing.JTextField tf4;
     public javax.swing.JTextField tf5;
     public javax.swing.JTextField tf6;
+    public javax.swing.JTextField tf7;
     // End of variables declaration//GEN-END:variables
 }

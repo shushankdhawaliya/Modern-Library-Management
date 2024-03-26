@@ -35,7 +35,6 @@ public class AdminstrationSection extends javax.swing.JFrame {
         b2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         b4 = new javax.swing.JButton();
-        b5 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -82,17 +81,7 @@ public class AdminstrationSection extends javax.swing.JFrame {
                 b4ActionPerformed(evt);
             }
         });
-        getContentPane().add(b4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 630, 230, 80));
-
-        b5.setBackground(new java.awt.Color(193, 150, 90));
-        b5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        b5.setText("Modify Student");
-        b5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b5ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(b5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 510, 230, 80));
+        getContentPane().add(b4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 540, 230, 80));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel2.setText("Adminstration Section");
@@ -123,10 +112,6 @@ public class AdminstrationSection extends javax.swing.JFrame {
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
         new ViewLibrarian().setVisible(true);
     }//GEN-LAST:event_b2ActionPerformed
-
-    private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
-            new ModifySection().setVisible(true);
-    }//GEN-LAST:event_b5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,7 +149,6 @@ public class AdminstrationSection extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b2;
     private javax.swing.JButton b4;
-    private javax.swing.JButton b5;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;

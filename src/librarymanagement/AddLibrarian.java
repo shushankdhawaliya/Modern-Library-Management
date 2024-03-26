@@ -117,9 +117,22 @@ public class AddLibrarian extends javax.swing.JFrame {
                 t2ActionPerformed(evt);
             }
         });
+        t2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                t2KeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                t2KeyTyped(evt);
+            }
+        });
         getContentPane().add(t2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 220, 340, 40));
 
         t3.setBackground(new java.awt.Color(193, 150, 90));
+        t3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                t3KeyTyped(evt);
+            }
+        });
         getContentPane().add(t3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 290, 340, 40));
 
         t4.setBackground(new java.awt.Color(193, 150, 90));
@@ -137,6 +150,11 @@ public class AddLibrarian extends javax.swing.JFrame {
         t6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 t6ActionPerformed(evt);
+            }
+        });
+        t6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                t6KeyTyped(evt);
             }
         });
         getContentPane().add(t6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, 340, 40));
@@ -180,7 +198,7 @@ public class AddLibrarian extends javax.swing.JFrame {
     }//GEN-LAST:event_t1ActionPerformed
 
     private void t2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t2ActionPerformed
-        // TODO add your handling code here:
+ 
     }//GEN-LAST:event_t2ActionPerformed
 
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
@@ -215,7 +233,7 @@ public class AddLibrarian extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this,"Failed to Added");
             }
             con.close();
-             new LibrarianPassword().setVisible(true);
+             new LibrarianPassword(stuid).setVisible(true);
              this.dispose();
             
             }
@@ -232,6 +250,30 @@ public class AddLibrarian extends javax.swing.JFrame {
     private void t6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_t6ActionPerformed
+
+    private void t2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t2KeyPressed
+                   
+    }//GEN-LAST:event_t2KeyPressed
+
+    private void t2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t2KeyTyped
+        char ch = evt.getKeyChar();
+        if(!((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')||(int)ch==32||(int)ch==8)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_t2KeyTyped
+
+    private void t3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t3KeyTyped
+    char ch = evt.getKeyChar();
+        if(!((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')||(int)ch==32||(int)ch==8)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_t3KeyTyped
+
+    private void t6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t6KeyTyped
+        if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_t6KeyTyped
 
     /**
      * @param args the command line arguments

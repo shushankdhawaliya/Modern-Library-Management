@@ -46,9 +46,10 @@ public class LibrarianLogin extends javax.swing.JFrame {
             }
             ps=con.prepareCall("select name from addlibrarian");
             rs=ps.executeQuery();
-            while(rs.next()){
-                al3.add(rs.getString(1));
-            }
+            while(rs.next()){                    
+                al3.add(rs.getString(1).toLowerCase());
+            }                            
+
         }
         catch(ClassNotFoundException | SQLException e){
             JOptionPane.showMessageDialog(this,e);
@@ -101,7 +102,7 @@ public class LibrarianLogin extends javax.swing.JFrame {
                 b1ActionPerformed(evt);
             }
         });
-        getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 450, 100, 40));
+        getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 450, 100, 40));
 
         b2.setBackground(new java.awt.Color(193, 150, 90));
         b2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -111,7 +112,7 @@ public class LibrarianLogin extends javax.swing.JFrame {
                 b2ActionPerformed(evt);
             }
         });
-        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 450, 100, 40));
+        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 450, 100, 40));
 
         t2.setBackground(new java.awt.Color(193, 150, 90));
         getContentPane().add(t2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, 380, 40));
@@ -134,7 +135,7 @@ public class LibrarianLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     String st,st2;
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
-       st= t1.getText();
+       st= t1.getText().toLowerCase().trim();
        st2=t2.getText();
        if(t1.getText().equals("")||t2.getText().equals("")){
            JOptionPane.showMessageDialog(this,"Please Enter All Fields");

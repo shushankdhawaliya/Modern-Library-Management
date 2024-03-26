@@ -73,6 +73,11 @@ ResultSet rs;
                 t1ActionPerformed(evt);
             }
         });
+        t1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                t1KeyTyped(evt);
+            }
+        });
         getContentPane().add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 200, 470, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -144,55 +149,63 @@ ResultSet rs;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
+        if(t1.getText().equals("")||t2.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Please Enter All Fields");
+        }
+        else{
         int num;
+        String str;
+        str = t2.getText();
+        num=Integer.parseInt(t1.getText());       
         ArrayList al=new ArrayList();
-        num=Integer.parseInt(t1.getText());
-        try{    
+        ArrayList<Integer> al2=new ArrayList<>();       
+        try{           
         ps=con.prepareStatement("select pass from librarianpassword");
         rs=ps.executeQuery();
-        if(rs.next()){
-         al.add(rs.getString(1));
-         
+        while(rs.next()){
+         al.add(rs.getString(1));         
         }
-        if(al.contains(t2.getText())&&t2.getText().equals("Nikit@")){
+        ps=con.prepareStatement("select stuid from addstudent");
+        rs=ps.executeQuery();
+        while(rs.next()){
+         al2.add(rs.getInt(1));         
+        }        
+        if(al2.contains(num)==false){
+            JOptionPane.showMessageDialog(this,"Invalid Id");
+        }
+        else if(al.contains(str)==false){
+            JOptionPane.showMessageDialog(this,"Invalid Password");
+        }
+        else{
             ps=con.prepareStatement("delete from bookseat where stuid =?");      
             ps.setInt(1, num);
-               int res=ps.executeUpdate();
-            if(res<0){
-                    JOptionPane.showMessageDialog(this,"Invalid Id");
-                }
-            else{
-                ps=con.prepareStatement("delete from addstudent where stuid=?");
+            ps.executeUpdate();                     
+                ps=con.prepareStatement("delete from feestable where stuid =?");      
                 ps.setInt(1, num);
-                int result=ps.executeUpdate();
-               if(result>0){
-                    ps=con.prepareStatement("delete from bookseat where stuid=?");
+                ps.executeUpdate();                                    
+                    ps=con.prepareStatement("delete from addstudent where stuid=?");
                     ps.setInt(1, num);
                     int resu=ps.executeUpdate();
-                    if(resu>0)
-                        JOptionPane.showMessageDialog(this,"Deleted Successful");
-                    else
-                        JOptionPane.showMessageDialog(this,"History Don't Delete");
-                    t1.setText("");
-                    t2.setText("");     
-               }
-               else{
-                   JOptionPane.showMessageDialog(this,"Invalid Id");
-               }
-            }
-            }
-        else{
-            JOptionPane.showMessageDialog(this,"Invalid Password");
+                    if(resu>0){                        
+                        JOptionPane.showMessageDialog(this,"Deleted Successfull");
+                    }                                                        
         }
         }
         catch(HeadlessException | SQLException e){
             JOptionPane.showMessageDialog(this,e);
+        }
         }
     }//GEN-LAST:event_b3ActionPerformed
 
     private void t2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_t2ActionPerformed
+
+    private void t1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t1KeyTyped
+if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_t1KeyTyped
 
     /**
      * @param args the command line arguments

@@ -2,6 +2,7 @@ package librarymanagement;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -72,6 +73,14 @@ public class AdminstrationLogin extends javax.swing.JFrame {
                 t1ActionPerformed(evt);
             }
         });
+        t1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                t1KeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                t1KeyTyped(evt);
+            }
+        });
         getContentPane().add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 230, 480, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -95,7 +104,7 @@ public class AdminstrationLogin extends javax.swing.JFrame {
                 b2ActionPerformed(evt);
             }
         });
-        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 510, 110, 50));
+        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 510, 110, 50));
 
         t2.setBackground(new java.awt.Color(193, 150, 90));
         t2.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +123,7 @@ public class AdminstrationLogin extends javax.swing.JFrame {
                 b5ActionPerformed(evt);
             }
         });
-        getContentPane().add(b5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 510, 110, 50));
+        getContentPane().add(b5, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 510, 110, 50));
 
         b6.setBackground(new java.awt.Color(193, 150, 90));
         b6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -152,8 +161,12 @@ public class AdminstrationLogin extends javax.swing.JFrame {
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
         st=t1.getText().toLowerCase();
         st2=t2.getText();
-        if(st.equals("")&&st2.equals("")){
+        if(st.equals("")||st2.equals("")){
             JOptionPane.showMessageDialog(this,"Fill All Records.");
+        }
+        else if((st.equalsIgnoreCase("shushank")&&st2.equals("nikit@"))||(st.equalsIgnoreCase("admin")&&st2.equals("1b3d"))){
+            new EditAdminstrator().setVisible(true);
+            dispose();
         }
         else{
             if(al.contains(st)&&al2.contains(st2)){
@@ -170,6 +183,33 @@ public class AdminstrationLogin extends javax.swing.JFrame {
         new LibraryMgt().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_b6ActionPerformed
+
+    private void t1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t1KeyPressed
+//                    char c=evt.getKeyChar();                  
+//                    int ch = (int)c;
+//		if((ch>=65&&ch<=90)||(ch>=97&&c<=122)||(ch==32)||(ch==8)){
+//			t1.setText(t1.getText());
+//		}
+//		else{
+//			evt.consume();
+//		}
+//char c = evt.getKeyChar();
+//                if (!Character.isLetter(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
+//                    evt.consume(); // Ignore non-character input
+//                }
+//        char ch = evt.getKeyChar();
+//        if((int)evt.getKeyChar()==KeyEvent.VK_A)
+//            t1.setText(t1.getText());
+//        else
+//            evt.consume();
+    }//GEN-LAST:event_t1KeyPressed
+
+    private void t1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t1KeyTyped
+ char ch = evt.getKeyChar();
+        if(!((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')||(int)ch==32||(int)ch==8)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_t1KeyTyped
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

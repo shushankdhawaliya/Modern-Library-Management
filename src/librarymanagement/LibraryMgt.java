@@ -1,24 +1,84 @@
-
 package librarymanagement;
+import java.awt.HeadlessException;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
 import javax.swing.JOptionPane;
-
-/**
- *
- * @author Shushank
- */
-public class LibraryMgt extends javax.swing.JFrame {
-    public LibraryMgt() {
-               try{
-                   setSize(Toolkit.getDefaultToolkit().getScreenSize());
-                    ImageIcon imicon = new ImageIcon(ClassLoader.getSystemResource("anne.png"));
-        Image icon = imicon.getImage();
-        setIconImage(icon);
-               }
-               catch(NullPointerException e){
+public class LibraryMgt extends javax.swing.JFrame {             
+    public LibraryMgt() {         
+         try{
+            Class.forName("com.mysql.jdbc.Driver"); 
+             int stuid=0;
+             LocalDate ldToday = LocalDate.now();
+                int todayDate = ldToday.getDayOfMonth();                
+                int mon = ldToday.getMonthValue();       
+                int year = ldToday.getYear();                            
+           Connection con;
+           PreparedStatement ps;
+           ResultSet rs;         
+           con= DriverManager.getConnection("jdbc:mysql://localhost:3306/librarymanagement","root","root");
+           ps = con.prepareStatement("select flag from flagtable");
+           rs= ps.executeQuery();
+           int data = -1;
+           if(rs.next())
+               data = rs.getInt(1);           
+           while(data<=todayDate){
+//               JOptionPane.showMessageDialog(this, data);
+//               JOptionPane.showMessageDialog(this,"Mission Imposible Start");                   
+           con= DriverManager.getConnection("jdbc:mysql://localhost:3306/librarymanagement","root","root");
+           ps = con.prepareStatement("select stuid,joindate from addstudent"); 
+           rs= ps.executeQuery();
+           while(rs.next()){
+               stuid = rs.getInt(1);;
+               String ddate = rs.getString(2);                                                         ;
+//                JOptionPane.showMessageDialog(this,"Databases's "+stuid+" "+ddate);                                
+                    LocalDate ld = LocalDate.parse(ddate);
+                    int dday = ld.getDayOfMonth();
+                    int dmont = ld.getMonthValue();
+                    int dyear2 = ld.getYear();
+                    if((dday==data&&mon!=dmont)||(dday==data&&mon==dmont&&year!=dyear2)){
+//                       JOptionPane.showMessageDialog(this,"Mission Imposible Part 1");
+                         ps = con.prepareStatement("select TotalFees,PerMonthFees from addstudent where joindate =? and stuid = ?");                               
+                         ps.setString(1,ddate);                         
+                         ps.setInt(2, stuid);                         
+                         ResultSet rrs= ps.executeQuery();
+                         int totalFees=0;
+                         int perMonthFees=0;
+                         if(rrs.next()){                                                                         
+                             totalFees=rrs.getInt(1);
+                             perMonthFees = rrs.getInt(2);
+                             rrs.close();
+                         }
+//                         JOptionPane.showMessageDialog(this,"Databases's "+stuid+" "+ddate+" "+totalFees+" "+perMonthFees);                                
+                         totalFees +=perMonthFees;
+//                         JOptionPane.showMessageDialog(this,"Databases's "+stuid+" "+ddate+" "+totalFees+" "+perMonthFees);                                
+                         ps = con.prepareStatement("update addstudent set totalfees =? where joindate =? and stuid = ?");
+                         ps.setInt(1,totalFees);                                                
+                         ps.setString(2,ddate);
+                         ps.setInt(3, stuid);
+                         ps.executeUpdate();                                                
+                    }                   
+                    }                                   
+            data = data+1;           
+           }          
+                LocalDate tomorrow = ldToday.plusDays(1);
+                int datetommorw = tomorrow.getDayOfMonth();
+                ps = con.prepareStatement("update flagtable set flag = ?");
+                ps.setInt(1,datetommorw);
+                ps.executeUpdate();                                    
+                setSize(Toolkit.getDefaultToolkit().getScreenSize());
+                ImageIcon imicon = new ImageIcon(ClassLoader.getSystemResource("anne.png"));
+                Image icon = imicon.getImage();
+                setIconImage(icon);                                                    
+         }
+               catch(HeadlessException | ClassNotFoundException | SQLException e){
                    JOptionPane.showMessageDialog(this,e);
                }
                

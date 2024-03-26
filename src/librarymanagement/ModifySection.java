@@ -136,7 +136,8 @@ public class ModifySection extends javax.swing.JFrame {
     }//GEN-LAST:event_b4ActionPerformed
 
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
-        new FeesSection().setVisible(true);
+                new FeesSection().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_b5ActionPerformed
 
     /**

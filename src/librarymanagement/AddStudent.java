@@ -12,6 +12,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -84,6 +86,13 @@ public class AddStudent extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         t8 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        cb1 = new javax.swing.JCheckBox();
+        cb2 = new javax.swing.JCheckBox();
+        cb3 = new javax.swing.JCheckBox();
         jLabel8 = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
@@ -107,12 +116,22 @@ public class AddStudent extends javax.swing.JFrame {
                 t2ActionPerformed(evt);
             }
         });
+        t2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                t2KeyTyped(evt);
+            }
+        });
         getContentPane().add(t2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 380, 40));
 
         t3.setBackground(new java.awt.Color(193, 150, 90));
         t3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 t3ActionPerformed(evt);
+            }
+        });
+        t3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                t3KeyTyped(evt);
             }
         });
         getContentPane().add(t3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 380, 40));
@@ -126,6 +145,11 @@ public class AddStudent extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, -1, -1));
 
         t5.setBackground(new java.awt.Color(193, 150, 90));
+        t5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                t5KeyTyped(evt);
+            }
+        });
         getContentPane().add(t5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 410, 380, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -146,6 +170,11 @@ public class AddStudent extends javax.swing.JFrame {
         t6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 t6ActionPerformed(evt);
+            }
+        });
+        t6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                t6KeyTyped(evt);
             }
         });
         getContentPane().add(t6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 380, 40));
@@ -183,7 +212,7 @@ public class AddStudent extends javax.swing.JFrame {
                 b1ActionPerformed(evt);
             }
         });
-        getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 620, 120, 40));
+        getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 660, 120, 40));
 
         jButton2.setBackground(new java.awt.Color(193, 150, 90));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -193,7 +222,7 @@ public class AddStudent extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 620, 130, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 660, 130, 40));
 
         jButton3.setBackground(new java.awt.Color(193, 150, 90));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -203,19 +232,58 @@ public class AddStudent extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 620, 120, 40));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 660, 120, 40));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Fees");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 560, 90, 20));
+        jLabel9.setText("5:00-2:00 ");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 600, 90, 20));
 
         t8.setBackground(new java.awt.Color(193, 150, 90));
+        t8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                t8KeyTyped(evt);
+            }
+        });
         getContentPane().add(t8, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 550, 380, 40));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Fees");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 560, 90, 20));
+
+        jLabel11.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setText("2:00-10:00");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 600, 90, 20));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setText("Full Day");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 600, 90, 20));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Timing");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 620, 90, 20));
+
+        cb1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 630, -1, -1));
+
+        cb2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 630, -1, -1));
+        getContentPane().add(cb3, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 630, -1, -1));
 
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/AddStudent.jpg"))); // NOI18N
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1430, 740));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 1430, 740));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -241,9 +309,39 @@ public class AddStudent extends javax.swing.JFrame {
        long cont;
        String name,fname,date,address;
        int fees;
-       if(t2.getText().equals("")||t3.getText().equals("")||t4.getText().equals("")||t5.getText().equals("")||t6.getText().equals("")||t8.getText().equals("")){
+       if(t2.getText().equals("")||t3.getText().equals("")||t4.getText().equals("")||t5.getText().equals("")||t8.getText().equals("")){
                 JOptionPane.showMessageDialog(this,"Fill All Data");
             }
+       else if(t6.getText().equals("yyyy-MM-dd")){
+        name=t2.getText();
+        fname=t3.getText();
+        address=t4.getText();
+        cont=Long.parseLong(t5.getText());       
+        fees=Integer.parseInt(t8.getText());   
+        try {
+            LocalDate currentDate = LocalDate.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                String formattedDate = currentDate.format(formatter);           
+                
+            ps=con.prepareStatement("insert into addstudent values(?,?,?,?,?,?,?,?)");
+            ps.setInt(1,stuid);
+            ps.setString(2,name);
+            ps.setString(3,fname);
+            ps.setString(4,address);
+            ps.setLong(5, cont);
+            ps.setString(6,formattedDate);
+            ps.setInt(7, fees);            
+            ps.setInt(8, fees);            
+            int res=ps.executeUpdate();
+            if(res<0){
+                JOptionPane.showMessageDialog(this,"Failed to Add student");
+            }
+                         
+        } catch (HeadlessException | SQLException ex) {
+           JOptionPane.showMessageDialog(this,ex);
+        }
+        
+       }
             else{
         name=t2.getText();
         fname=t3.getText();
@@ -256,9 +354,8 @@ public class AddStudent extends javax.swing.JFrame {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             // Parse the string to obtain a Date object
             Date date2 = dateFormat.parse(date);
-           java.sql.Date sqlDate = new java.sql.Date(date2.getTime());
-           
-            ps=con.prepareStatement("insert into addstudent values(?,?,?,?,?,?,?)");
+           java.sql.Date sqlDate = new java.sql.Date(date2.getTime());          
+            ps=con.prepareStatement("insert into addstudent values(?,?,?,?,?,?,?,?)");
             ps.setInt(1,stuid);
             ps.setString(2,name);
             ps.setString(3,fname);
@@ -266,6 +363,8 @@ public class AddStudent extends javax.swing.JFrame {
             ps.setLong(5, cont);
             ps.setDate(6,sqlDate);
             ps.setInt(7, fees);
+            ps.setInt(8, fees);
+//            ps.setDate(9, tdate);
             int res=ps.executeUpdate();
             if(res<0){
                 JOptionPane.showMessageDialog(this,"Failed to Add student");
@@ -274,9 +373,26 @@ public class AddStudent extends javax.swing.JFrame {
         } catch (HeadlessException | SQLException | ParseException ex) {
            JOptionPane.showMessageDialog(this,ex);
         }
-        new LibraryChoice().setVisible(true);
        }
-       
+                int timing;
+        int bookseat=-1;
+        if(cb1.isSelected()==true)timing=5;
+        else if(cb2.isSelected()==true)timing= 2;
+        else timing=100;
+        try{
+            ps=con.prepareStatement("insert into bookseat values(?,?,?)");
+            ps.setInt(1,stuid);
+            ps.setInt(2,bookseat);
+            ps.setInt(3, timing);
+            int res=ps.executeUpdate();
+            if(res<0)JOptionPane.showMessageDialog(this,"Timeing don't Add");
+        }
+        catch(HeadlessException | SQLException e){
+            JOptionPane.showMessageDialog(this,e);
+        }
+        new BookSeat2().setVisible(true);
+           this.dispose();
+           new AddStudent().dispose();     
     }//GEN-LAST:event_b1ActionPerformed
 
     private void t6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_t6FocusGained
@@ -300,12 +416,59 @@ public class AddStudent extends javax.swing.JFrame {
             t5.setText("");
             t6.setText("");
             t8.setText("");
+            cb1.removeAll();
+            cb2.removeAll();
+            cb3.removeAll();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
           new LibrarySection().setVisible(true);
           this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void cb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb1ActionPerformed
+             if(cb2.isSelected()==true||cb3.isSelected()==true){
+            cb1.setSelected(false);
+             }
+    }//GEN-LAST:event_cb1ActionPerformed
+
+    private void cb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb2ActionPerformed
+        if(cb1.isSelected()==true||cb3.isSelected()==true){
+            cb2.setSelected(false);
+        }
+    }//GEN-LAST:event_cb2ActionPerformed
+
+    private void t2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t2KeyTyped
+ char ch = evt.getKeyChar();
+        if(!((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')||(int)ch==32||(int)ch==8)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_t2KeyTyped
+
+    private void t3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t3KeyTyped
+         char ch = evt.getKeyChar();
+        if(!((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')||(int)ch==32||(int)ch==8)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_t3KeyTyped
+
+    private void t5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t5KeyTyped
+if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_t5KeyTyped
+
+    private void t8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t8KeyTyped
+        if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_t8KeyTyped
+
+    private void t6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t6KeyTyped
+if(!(Character.isDigit(evt.getKeyChar())||(int)evt.getKeyChar()==45)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_t6KeyTyped
 
     /**
      * @param args the command line arguments
@@ -342,10 +505,17 @@ public class AddStudent extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b1;
+    private javax.swing.JCheckBox cb1;
+    private javax.swing.JCheckBox cb2;
+    private javax.swing.JCheckBox cb3;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
