@@ -68,30 +68,30 @@ public class ChangeTiming extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         tf1 = new javax.swing.JTextField();
-        tf3 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         tf2 = new javax.swing.JTextField();
         resetbtn = new javax.swing.JButton();
         submitbtn = new javax.swing.JButton();
         backbtn = new javax.swing.JButton();
+        tf3 = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Lucida Handwriting", 1, 48)); // NOI18N
         jLabel1.setText("Change Timing/Seat");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, 530, 60));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 640, 70));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         jLabel2.setText("Enter Student Id");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 150, 50));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 190, 40));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("Enter Librararian Pass.");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 380, 170, 50));
+        jLabel3.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
+        jLabel3.setText("Enter Lib. Pass.");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, 220, 40));
 
-        tf1.setBackground(new java.awt.Color(193, 150, 90));
+        tf1.setBackground(new java.awt.Color(255, 204, 255));
         tf1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf1ActionPerformed(evt);
@@ -102,23 +102,17 @@ public class ChangeTiming extends javax.swing.JFrame {
                 tf1KeyTyped(evt);
             }
         });
-        getContentPane().add(tf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 430, 40));
+        getContentPane().add(tf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 190, 480, 40));
 
-        tf3.setBackground(new java.awt.Color(193, 150, 90));
-        tf3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(tf3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 390, 430, 40));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         jLabel4.setText("Enter New Time");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, 150, 50));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 190, 40));
 
-        tf2.setBackground(new java.awt.Color(193, 150, 90));
-        tf2.setText("like 5,2 or full");
+        tf2.setBackground(new java.awt.Color(255, 204, 255));
+        tf2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        tf2.setText("like M, E or Full");
         tf2.setToolTipText("");
+        tf2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         tf2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 tf2FocusGained(evt);
@@ -132,39 +126,48 @@ public class ChangeTiming extends javax.swing.JFrame {
                 tf2ActionPerformed(evt);
             }
         });
-        getContentPane().add(tf2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 430, 40));
+        getContentPane().add(tf2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 300, 480, 40));
 
-        resetbtn.setBackground(new java.awt.Color(193, 150, 90));
-        resetbtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        resetbtn.setBackground(new java.awt.Color(204, 255, 255));
+        resetbtn.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         resetbtn.setText("Reset");
         resetbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resetbtnActionPerformed(evt);
             }
         });
-        getContentPane().add(resetbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 520, 120, 40));
+        getContentPane().add(resetbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 520, 110, 50));
 
-        submitbtn.setBackground(new java.awt.Color(193, 150, 90));
-        submitbtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        submitbtn.setBackground(new java.awt.Color(204, 255, 255));
+        submitbtn.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         submitbtn.setText("Submit");
         submitbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitbtnActionPerformed(evt);
             }
         });
-        getContentPane().add(submitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 520, 130, 40));
+        getContentPane().add(submitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 520, 110, 50));
 
-        backbtn.setBackground(new java.awt.Color(193, 150, 90));
-        backbtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        backbtn.setBackground(new java.awt.Color(204, 255, 255));
+        backbtn.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         backbtn.setText("Back");
         backbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backbtnActionPerformed(evt);
             }
         });
-        getContentPane().add(backbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 520, 120, 40));
+        getContentPane().add(backbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 520, 110, 50));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/change3.jpg"))); // NOI18N
+        tf3.setBackground(new java.awt.Color(255, 204, 255));
+        tf3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tf3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, 480, 40));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/Ori.png"))); // NOI18N
+        jLabel5.setText("SSS");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1390, 710));
 
         pack();
@@ -179,7 +182,7 @@ public class ChangeTiming extends javax.swing.JFrame {
     }//GEN-LAST:event_tf2ActionPerformed
 
     private void tf2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf2FocusGained
-        if(tf2.getText().equals("like 5,2 or full")){
+        if(tf2.getText().equals("like M, E or Full")){
             tf2.setText("");
             tf2.setForeground(new Color(0,0,0));
             
@@ -188,23 +191,19 @@ public class ChangeTiming extends javax.swing.JFrame {
 
     private void tf2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf2FocusLost
         if(tf2.getText().equals("")){
-            tf2.setText("like 5,2 or full");
+            tf2.setText("like M, E or Full");
      
         }
     }//GEN-LAST:event_tf2FocusLost
 
-    private void tf3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf3ActionPerformed
-
     private void resetbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetbtnActionPerformed
         tf1.setText("");
-        tf2.setText("like 5,2 or full");
+        tf2.setText("like M, E or Full");
         tf3.setText("");
     }//GEN-LAST:event_resetbtnActionPerformed
 
     private void submitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitbtnActionPerformed
-        if(tf1.getText().equals("")||tf2.getText().equals("like 5,2 or full")||tf3.getText().equals("")){
+        if(tf1.getText().equals("")||tf2.getText().equals("like M, E or Full")||tf3.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Please Enter All Fields");
         }
         else{
@@ -214,7 +213,7 @@ public class ChangeTiming extends javax.swing.JFrame {
             if(al.contains(stid)){               
                 if(al2.contains(st3)){
                     int res=0;
-                    if(st2.equals("5")){
+                    if(st2.equals("M")){
                         int time=5;
                         try{
                             ps=con.prepareStatement("update bookseat set timing=?,seatnum=? where stuid=?");
@@ -229,7 +228,7 @@ public class ChangeTiming extends javax.swing.JFrame {
                         }
 
                     }
-                    else if(st2.equals("2")){
+                    else if(st2.equals("E")){
                         int time=2;
                         try{
                             ps=con.prepareStatement("update bookseat set timing=?,seatnum=? where stuid=?");
@@ -285,6 +284,10 @@ if(!Character.isDigit(evt.getKeyChar())){
         }
     }//GEN-LAST:event_tf1KeyTyped
 
+    private void tf3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -329,6 +332,6 @@ if(!Character.isDigit(evt.getKeyChar())){
     private javax.swing.JButton submitbtn;
     private javax.swing.JTextField tf1;
     private javax.swing.JTextField tf2;
-    private javax.swing.JTextField tf3;
+    private javax.swing.JPasswordField tf3;
     // End of variables declaration//GEN-END:variables
 }

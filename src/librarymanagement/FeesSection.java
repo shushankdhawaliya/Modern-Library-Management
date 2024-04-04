@@ -70,56 +70,66 @@ public class FeesSection extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         tf2 = new javax.swing.JPasswordField();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 72)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Lucida Handwriting", 1, 48)); // NOI18N
         jLabel1.setText("Fees Section");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 70, -1, 80));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         jLabel2.setText("Librarian Id");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 110, 38));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 190, 40));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         jLabel3.setText("Librarian Pass.");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 150, -1));
-        getContentPane().add(tf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 390, 38));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 230, 40));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tf1.setBackground(new java.awt.Color(255, 204, 255));
+        getContentPane().add(tf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 230, 480, 40));
+
+        jButton1.setBackground(new java.awt.Color(205, 255, 255));
+        jButton1.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 520, 90, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 510, 110, 50));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(205, 255, 255));
+        jButton2.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         jButton2.setText("Next");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 520, 90, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 510, 110, 50));
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(205, 255, 255));
+        jButton3.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         jButton3.setText("Reset");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 520, 90, 40));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 510, 110, 50));
 
+        tf2.setBackground(new java.awt.Color(255, 204, 255));
         tf2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf2ActionPerformed(evt);
             }
         });
-        getContentPane().add(tf2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 400, 390, 35));
+        getContentPane().add(tf2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 480, 40));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/Ori.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -211,6 +221,7 @@ public class FeesSection extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField tf1;
     private javax.swing.JPasswordField tf2;
     // End of variables declaration//GEN-END:variables

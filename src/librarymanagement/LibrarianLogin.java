@@ -79,56 +79,56 @@ public class LibrarianLogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        t1.setBackground(new java.awt.Color(193, 150, 90));
-        getContentPane().add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 230, 380, 40));
+        t1.setBackground(new java.awt.Color(255, 204, 255));
+        getContentPane().add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 230, 480, 50));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         jLabel2.setText("UserName/Id");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 190, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 160, 50));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Lucida Handwriting", 1, 48)); // NOI18N
         jLabel3.setText("Welcome to LibrarianLogin Mode");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, -1, 70));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, 100));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         jLabel4.setText("Password");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, 190, 30));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 170, 50));
 
-        b1.setBackground(new java.awt.Color(193, 150, 90));
-        b1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        b1.setBackground(new java.awt.Color(204, 255, 255));
+        b1.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         b1.setText("Submit");
         b1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b1ActionPerformed(evt);
             }
         });
-        getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 450, 100, 40));
+        getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 510, 110, 50));
 
-        b2.setBackground(new java.awt.Color(193, 150, 90));
-        b2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        b2.setBackground(new java.awt.Color(204, 255, 255));
+        b2.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         b2.setText("Reset");
         b2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b2ActionPerformed(evt);
             }
         });
-        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 450, 100, 40));
+        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 510, 110, 50));
 
-        t2.setBackground(new java.awt.Color(193, 150, 90));
-        getContentPane().add(t2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, 380, 40));
+        t2.setBackground(new java.awt.Color(255, 204, 255));
+        getContentPane().add(t2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 340, 480, 50));
 
-        b3.setBackground(new java.awt.Color(193, 150, 90));
-        b3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        b3.setBackground(new java.awt.Color(204, 255, 255));
+        b3.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         b3.setText("Back");
         b3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b3ActionPerformed(evt);
             }
         });
-        getContentPane().add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, 100, 40));
+        getContentPane().add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 510, 110, 50));
 
         jLabel1.setBackground(new java.awt.Color(193, 150, 90));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/LibrarianLogin.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/Ori.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1430, 700));
 
         pack();

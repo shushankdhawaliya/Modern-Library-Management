@@ -61,31 +61,31 @@ public class ChangeAddress extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Lucida Handwriting", 1, 48)); // NOI18N
         jLabel1.setText("Change Address");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 70, 420, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 70, 490, -1));
 
-        jButton1.setBackground(new java.awt.Color(193, 153, 90));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(204, 255, 255));
+        jButton1.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         jButton1.setText("Submit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 440, 120, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 510, 110, 50));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         jLabel2.setText("Enter Student Id");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 160, 20));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 210, 40));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         jLabel3.setText("Enter New Address");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 220, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 220, 40));
 
-        tf1.setBackground(new java.awt.Color(193, 150, 90));
+        tf1.setBackground(new java.awt.Color(255, 204, 255));
         tf1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf1ActionPerformed(evt);
@@ -96,37 +96,37 @@ public class ChangeAddress extends javax.swing.JFrame {
                 tf1KeyTyped(evt);
             }
         });
-        getContentPane().add(tf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 210, 460, 40));
+        getContentPane().add(tf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 230, 460, 40));
 
-        tf3.setBackground(new java.awt.Color(193, 150, 90));
+        tf3.setBackground(new java.awt.Color(255, 204, 255));
         tf3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf3ActionPerformed(evt);
             }
         });
-        getContentPane().add(tf3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, 460, 40));
+        getContentPane().add(tf3, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 340, 460, 40));
 
-        jButton2.setBackground(new java.awt.Color(193, 153, 90));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(204, 255, 255));
+        jButton2.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         jButton2.setText("Reset");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 440, 120, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 510, 110, 50));
 
-        jButton3.setBackground(new java.awt.Color(193, 150, 90));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(204, 255, 255));
+        jButton3.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         jButton3.setText("Back");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 440, 120, 40));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 510, 110, 50));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/Change.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/Ori.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1450, 710));
 
         pack();

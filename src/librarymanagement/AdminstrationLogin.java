@@ -67,7 +67,7 @@ public class AdminstrationLogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        t1.setBackground(new java.awt.Color(193, 150, 90));
+        t1.setBackground(new java.awt.Color(255, 204, 255));
         t1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 t1ActionPerformed(evt);
@@ -83,20 +83,20 @@ public class AdminstrationLogin extends javax.swing.JFrame {
         });
         getContentPane().add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 230, 480, 40));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         jLabel2.setText("User Name");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 130, 40));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Lucida Handwriting", 1, 48)); // NOI18N
         jLabel3.setText("Welcome to Adminstrator Mode");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, 90));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, -1, 90));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         jLabel4.setText("Password");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 140, 40));
 
-        b2.setBackground(new java.awt.Color(193, 150, 90));
-        b2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        b2.setBackground(new java.awt.Color(204, 255, 255));
+        b2.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         b2.setText("Reset");
         b2.setBorder(null);
         b2.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +106,7 @@ public class AdminstrationLogin extends javax.swing.JFrame {
         });
         getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 510, 110, 50));
 
-        t2.setBackground(new java.awt.Color(193, 150, 90));
+        t2.setBackground(new java.awt.Color(255, 204, 255));
         t2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 t2ActionPerformed(evt);
@@ -114,8 +114,8 @@ public class AdminstrationLogin extends javax.swing.JFrame {
         });
         getContentPane().add(t2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 340, 480, 40));
 
-        b5.setBackground(new java.awt.Color(193, 150, 90));
-        b5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        b5.setBackground(new java.awt.Color(204, 255, 255));
+        b5.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         b5.setText("Submit");
         b5.setBorder(null);
         b5.addActionListener(new java.awt.event.ActionListener() {
@@ -125,8 +125,8 @@ public class AdminstrationLogin extends javax.swing.JFrame {
         });
         getContentPane().add(b5, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 510, 110, 50));
 
-        b6.setBackground(new java.awt.Color(193, 150, 90));
-        b6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        b6.setBackground(new java.awt.Color(204, 255, 255));
+        b6.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         b6.setText("Back");
         b6.setBorder(null);
         b6.addActionListener(new java.awt.event.ActionListener() {
@@ -136,9 +136,9 @@ public class AdminstrationLogin extends javax.swing.JFrame {
         });
         getContentPane().add(b6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 510, 110, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/Admin2.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/Ori.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1390, 830));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1390, 710));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

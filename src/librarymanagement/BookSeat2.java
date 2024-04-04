@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -1042,25 +1043,27 @@ public class BookSeat2 extends javax.swing.JFrame {
         });
         getContentPane().add(jButton103, new org.netbeans.lib.awtextra.AbsoluteConstraints(549, 578, -1, -1));
 
-        jButton107.setBackground(new java.awt.Color(193, 150, 90));
-        jButton107.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton107.setText("GO To Libraian Sectioin");
+        jButton107.setBackground(new java.awt.Color(204, 255, 255));
+        jButton107.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
+        jButton107.setText("Home");
         jButton107.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton107ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton107, new org.netbeans.lib.awtextra.AbsoluteConstraints(1098, 440, -1, 41));
+        getContentPane().add(jButton107, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 450, 250, 40));
 
-        bookseat.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        bookseat.setBackground(new java.awt.Color(204, 255, 255));
+        bookseat.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         bookseat.setText("Book Seat");
         bookseat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bookseatActionPerformed(evt);
             }
         });
-        getContentPane().add(bookseat, new org.netbeans.lib.awtextra.AbsoluteConstraints(1113, 105, 129, -1));
+        getContentPane().add(bookseat, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 90, 250, 40));
 
+        tf1.setBackground(new java.awt.Color(255, 204, 255));
         tf1.setForeground(new java.awt.Color(153, 153, 153));
         tf1.setText("Enter Seat Number");
         tf1.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1081,49 +1084,49 @@ public class BookSeat2 extends javax.swing.JFrame {
                 tf1KeyTyped(evt);
             }
         });
-        getContentPane().add(tf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1098, 37, 173, 39));
+        getContentPane().add(tf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 10, 250, 50));
 
         viewbtn.setBackground(new java.awt.Color(255, 102, 102));
-        viewbtn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        viewbtn.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         viewbtn.setText("View All Booked Seat");
         viewbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewbtnActionPerformed(evt);
             }
         });
-        getContentPane().add(viewbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1098, 146, 173, 41));
+        getContentPane().add(viewbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 160, 250, 40));
 
         viewbtn100.setBackground(new java.awt.Color(153, 153, 0));
-        viewbtn100.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        viewbtn100.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         viewbtn100.setText("View Full Time seats");
         viewbtn100.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewbtn100ActionPerformed(evt);
             }
         });
-        getContentPane().add(viewbtn100, new org.netbeans.lib.awtextra.AbsoluteConstraints(1098, 323, 173, 41));
+        getContentPane().add(viewbtn100, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 370, 250, 40));
 
         viewbtn2.setBackground(new java.awt.Color(102, 204, 255));
-        viewbtn2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        viewbtn2.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         viewbtn2.setText("View 2:00-10:00 Seats");
         viewbtn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewbtn2ActionPerformed(evt);
             }
         });
-        getContentPane().add(viewbtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1098, 264, -1, 41));
+        getContentPane().add(viewbtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 300, 250, 40));
 
         viewbtn5.setBackground(new java.awt.Color(153, 255, 153));
-        viewbtn5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        viewbtn5.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         viewbtn5.setText("View 5:00-2:00 Seats");
         viewbtn5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewbtn5ActionPerformed(evt);
             }
         });
-        getContentPane().add(viewbtn5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1098, 205, 173, 41));
+        getContentPane().add(viewbtn5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 230, 250, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/BookSeat.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/Ori.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1420, 690));
 
         pack();
@@ -1793,8 +1796,7 @@ public class BookSeat2 extends javax.swing.JFrame {
             if(al2.contains(button.getText())){
                 button.setBackground(Color.red);
             }
-        }
-        //jButton1.setBackground(Color.red);
+        }                    
         JOptionPane.showMessageDialog(this,al2);
         }
         catch(HeadlessException | SQLException e){

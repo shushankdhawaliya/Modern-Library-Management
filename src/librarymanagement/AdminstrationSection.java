@@ -41,18 +41,18 @@ public class AdminstrationSection extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBackground(new java.awt.Color(193, 150, 90));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(204, 255, 255));
+        jButton2.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         jButton2.setText("Add Librarian");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 230, 80));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 270, 80));
 
-        b2.setBackground(new java.awt.Color(193, 150, 90));
-        b2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        b2.setBackground(new java.awt.Color(204, 255, 255));
+        b2.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         b2.setText("View Librarian");
         b2.setMaximumSize(new java.awt.Dimension(125, 25));
         b2.setMinimumSize(new java.awt.Dimension(125, 25));
@@ -61,33 +61,33 @@ public class AdminstrationSection extends javax.swing.JFrame {
                 b2ActionPerformed(evt);
             }
         });
-        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 280, 230, 80));
+        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 300, 270, 80));
 
-        jButton3.setBackground(new java.awt.Color(193, 150, 90));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(204, 255, 255));
+        jButton3.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         jButton3.setText("Delete Librarian");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 400, 230, 80));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, 270, 80));
 
-        b4.setBackground(new java.awt.Color(193, 150, 90));
-        b4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        b4.setBackground(new java.awt.Color(204, 255, 255));
+        b4.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         b4.setText("LogOut");
         b4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b4ActionPerformed(evt);
             }
         });
-        getContentPane().add(b4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 540, 230, 80));
+        getContentPane().add(b4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 560, 270, 80));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Lucida Handwriting", 1, 48)); // NOI18N
         jLabel2.setText("Adminstration Section");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 40, 560, 80));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 730, 80));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/Admin.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/Ori.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 1590, 960));
 
         pack();

@@ -199,6 +199,7 @@ public class FeesSec extends javax.swing.JFrame {
         tf1 = new javax.swing.JTextField();
         viewbtn = new javax.swing.JButton();
         viewbtn1 = new javax.swing.JButton();
+        jButton105 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1036,25 +1037,27 @@ public class FeesSec extends javax.swing.JFrame {
         });
         getContentPane().add(jButton103, new org.netbeans.lib.awtextra.AbsoluteConstraints(549, 578, -1, -1));
 
-        jButton107.setBackground(new java.awt.Color(193, 150, 90));
-        jButton107.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton107.setText("Back");
+        jButton107.setBackground(new java.awt.Color(204, 255, 255));
+        jButton107.setFont(new java.awt.Font("Lucida Handwriting", 1, 12)); // NOI18N
+        jButton107.setText("Home");
         jButton107.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton107ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton107, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 320, 90, 30));
+        getContentPane().add(jButton107, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 380, 250, 40));
 
-        bookseat.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        bookseat.setBackground(new java.awt.Color(204, 255, 255));
+        bookseat.setFont(new java.awt.Font("Lucida Handwriting", 1, 12)); // NOI18N
         bookseat.setText("Add Fees");
         bookseat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bookseatActionPerformed(evt);
             }
         });
-        getContentPane().add(bookseat, new org.netbeans.lib.awtextra.AbsoluteConstraints(1113, 105, 129, -1));
+        getContentPane().add(bookseat, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 90, 250, 40));
 
+        tf1.setBackground(new java.awt.Color(255, 204, 255));
         tf1.setForeground(new java.awt.Color(153, 153, 153));
         tf1.setText("Enter StudentId");
         tf1.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1075,37 +1078,46 @@ public class FeesSec extends javax.swing.JFrame {
                 tf1KeyTyped(evt);
             }
         });
-        getContentPane().add(tf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 40, 173, 39));
+        getContentPane().add(tf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 10, 250, 50));
 
-        viewbtn.setBackground(new java.awt.Color(193, 150, 90));
-        viewbtn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        viewbtn.setBackground(new java.awt.Color(204, 255, 255));
+        viewbtn.setFont(new java.awt.Font("Lucida Handwriting", 1, 12)); // NOI18N
         viewbtn.setText("View Fees History");
         viewbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewbtnActionPerformed(evt);
             }
         });
-        getContentPane().add(viewbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 220, 173, 41));
+        getContentPane().add(viewbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 230, 250, 40));
 
-        viewbtn1.setBackground(new java.awt.Color(193, 150, 90));
-        viewbtn1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        viewbtn1.setBackground(new java.awt.Color(204, 255, 255));
+        viewbtn1.setFont(new java.awt.Font("Lucida Handwriting", 1, 12)); // NOI18N
         viewbtn1.setText("View All Student Fees");
         viewbtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewbtn1ActionPerformed(evt);
             }
         });
-        getContentPane().add(viewbtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 150, 173, 41));
+        getContentPane().add(viewbtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 160, 250, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/BookSeat.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1420, 690));
+        jButton105.setBackground(new java.awt.Color(204, 255, 255));
+        jButton105.setFont(new java.awt.Font("Lucida Handwriting", 1, 12)); // NOI18N
+        jButton105.setText("Manually Update");
+        jButton105.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton105ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton105, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 300, 250, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/Ori.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1460, 740));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int num=Integer.parseInt(jButton1.getActionCommand());
-        JOptionPane.showMessageDialog(this,num);
         this.checkDetails(num);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -1633,13 +1645,19 @@ public class FeesSec extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton107ActionPerformed
 
     private void bookseatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookseatActionPerformed
+        int num = Integer.parseInt(tf1.getText());
         if(tf1.getText().equals("Enter StudentId")){
             JOptionPane.showMessageDialog(this,"Please Enter StudentId or SeatNum");
         }
         else{
-            int num = Integer.parseInt(tf1.getText());
+            if(num>104&&num<1000||num>2000){
+                JOptionPane.showMessageDialog(this,"Data not found");
+            }
+            else{
+            num = Integer.parseInt(tf1.getText());
                 new FeesSubmit(num).setVisible(true);
                 this.dispose();
+            }
         }
     }//GEN-LAST:event_bookseatActionPerformed
 
@@ -1681,6 +1699,17 @@ if(!Character.isDigit(evt.getKeyChar())){
         }
     }//GEN-LAST:event_tf1KeyTyped
 
+    private void jButton105ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton105ActionPerformed
+         if(tf1.getText().equals("Enter StudentId")){
+            JOptionPane.showMessageDialog(this," Please Enter StudentId or SeatNum ");
+        }
+        else{            
+            new ManuallyFeesSubmit(Integer.parseInt(tf1.getText())).setVisible(true);            
+        }    
+        
+            
+    }//GEN-LAST:event_jButton105ActionPerformed
+
     
     
 
@@ -1702,6 +1731,7 @@ if(!Character.isDigit(evt.getKeyChar())){
     private javax.swing.JButton jButton102;
     private javax.swing.JButton jButton103;
     private javax.swing.JButton jButton104;
+    private javax.swing.JButton jButton105;
     private javax.swing.JButton jButton107;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;

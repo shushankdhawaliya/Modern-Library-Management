@@ -87,13 +87,13 @@ public class ShowStudentDetail extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Lucida Handwriting", 1, 12)); // NOI18N
         jLabel1.setText("Student id");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 81, 95, 19));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 81, 120, 19));
 
         tf1.setEditable(false);
-        tf1.setBackground(new java.awt.Color(193, 150, 90));
+        tf1.setBackground(new java.awt.Color(255, 204, 255));
         tf1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf1ActionPerformed(evt);
@@ -106,33 +106,33 @@ public class ShowStudentDetail extends javax.swing.JFrame {
         });
         getContentPane().add(tf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 81, 143, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         jLabel2.setText("Student Details");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 28, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Lucida Handwriting", 1, 12)); // NOI18N
         jLabel3.setText("Name");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 119, 95, 19));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 119, 120, 19));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Lucida Handwriting", 1, 12)); // NOI18N
         jLabel4.setText("Father's Name");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 157, 95, 19));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 157, 120, 19));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Lucida Handwriting", 1, 12)); // NOI18N
         jLabel5.setText("Address");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 195, 95, 19));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 195, 120, 19));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel6.setFont(new java.awt.Font("Lucida Handwriting", 1, 12)); // NOI18N
         jLabel6.setText("Contact No.");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 233, 95, 19));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 233, 120, 19));
 
         tf2.setEditable(false);
-        tf2.setBackground(new java.awt.Color(193, 150, 90));
+        tf2.setBackground(new java.awt.Color(255, 204, 255));
         tf2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tf2KeyTyped(evt);
@@ -141,7 +141,7 @@ public class ShowStudentDetail extends javax.swing.JFrame {
         getContentPane().add(tf2, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 119, 143, -1));
 
         tf3.setEditable(false);
-        tf3.setBackground(new java.awt.Color(193, 150, 90));
+        tf3.setBackground(new java.awt.Color(255, 204, 255));
         tf3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf3ActionPerformed(evt);
@@ -150,20 +150,20 @@ public class ShowStudentDetail extends javax.swing.JFrame {
         getContentPane().add(tf3, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 157, 143, -1));
 
         tf5.setEditable(false);
-        tf5.setBackground(new java.awt.Color(193, 150, 90));
+        tf5.setBackground(new java.awt.Color(255, 204, 255));
         getContentPane().add(tf5, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 233, 143, -1));
 
         tf4.setEditable(false);
-        tf4.setBackground(new java.awt.Color(193, 150, 90));
+        tf4.setBackground(new java.awt.Color(255, 204, 255));
         getContentPane().add(tf4, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 195, 143, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel7.setFont(new java.awt.Font("Lucida Handwriting", 1, 12)); // NOI18N
         jLabel7.setText("Joining Date");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 271, 95, 19));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 271, 120, 19));
 
         tf6.setEditable(false);
-        tf6.setBackground(new java.awt.Color(193, 150, 90));
+        tf6.setBackground(new java.awt.Color(255, 204, 255));
         getContentPane().add(tf6, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 271, 143, -1));
 
         jButton1.setBackground(new java.awt.Color(193, 150, 90));
@@ -176,8 +176,9 @@ public class ShowStudentDetail extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 320, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/StudentDetail.jpg"))); // NOI18N
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 370));
+        jLabel8.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/Ori.png"))); // NOI18N
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 320));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -39,62 +39,62 @@ public class LibrarySection extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(193, 150, 90));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(204, 255, 255));
+        jButton1.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         jButton1.setText("Add Student");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 130, 260, 80));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 270, 80));
 
-        b2.setBackground(new java.awt.Color(193, 150, 90));
-        b2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        b2.setBackground(new java.awt.Color(204, 255, 255));
+        b2.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         b2.setText("View Student");
         b2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b2ActionPerformed(evt);
             }
         });
-        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 260, 80));
+        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 270, 80));
 
-        jButton3.setBackground(new java.awt.Color(193, 150, 90));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton3.setText("Modify Student Detail");
+        jButton3.setBackground(new java.awt.Color(204, 255, 255));
+        jButton3.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
+        jButton3.setText("Modify Students");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 370, 260, 80));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 270, 80));
 
-        jButton4.setBackground(new java.awt.Color(193, 150, 90));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton4.setBackground(new java.awt.Color(204, 255, 255));
+        jButton4.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         jButton4.setText("Delete Student");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 490, 260, 80));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 500, 270, 80));
 
-        jButton5.setBackground(new java.awt.Color(193, 150, 90));
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton5.setBackground(new java.awt.Color(204, 255, 255));
+        jButton5.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         jButton5.setText("LogOut");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 610, 260, 80));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 620, 270, 80));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Lucida Handwriting", 1, 48)); // NOI18N
         jLabel3.setText("Welcome to Student Section");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, 90));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, -1, 90));
 
-        jLabel1.setBackground(new java.awt.Color(193, 150, 90));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/LibrarianSection.jpg"))); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(204, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/Ori.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1430, 900));
 
         pack();

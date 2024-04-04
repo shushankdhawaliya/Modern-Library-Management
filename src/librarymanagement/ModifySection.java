@@ -54,63 +54,63 @@ public class ModifySection extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        b1.setBackground(new java.awt.Color(193, 150, 90));
-        b1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        b1.setBackground(new java.awt.Color(204, 255, 255));
+        b1.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         b1.setText("Change Address");
         b1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b1ActionPerformed(evt);
             }
         });
-        getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 230, 70));
+        getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 270, 80));
 
-        b2.setBackground(new java.awt.Color(193, 150, 90));
-        b2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        b2.setBackground(new java.awt.Color(204, 255, 255));
+        b2.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         b2.setText("Change Contact  No.");
         b2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b2ActionPerformed(evt);
             }
         });
-        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 280, 230, 70));
+        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 270, 80));
 
-        b3.setBackground(new java.awt.Color(193, 150, 90));
-        b3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        b3.setBackground(new java.awt.Color(204, 255, 255));
+        b3.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         b3.setText("Change Library Time/Seat");
         b3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b3ActionPerformed(evt);
             }
         });
-        getContentPane().add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 390, 230, 70));
+        getContentPane().add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 270, 80));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Lucida Handwriting", 1, 48)); // NOI18N
         jLabel1.setText("Modify Section");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 390, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, 440, -1));
 
-        b4.setBackground(new java.awt.Color(193, 150, 90));
-        b4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        b4.setBackground(new java.awt.Color(204, 255, 255));
+        b4.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         b4.setText("Go To Student Section");
         b4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b4ActionPerformed(evt);
             }
         });
-        getContentPane().add(b4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 620, 230, 70));
+        getContentPane().add(b4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 620, 270, 80));
 
-        b5.setBackground(new java.awt.Color(193, 150, 90));
-        b5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        b5.setBackground(new java.awt.Color(204, 255, 255));
+        b5.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         b5.setText("Fees Management");
         b5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b5ActionPerformed(evt);
             }
         });
-        getContentPane().add(b5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 500, 230, 70));
+        getContentPane().add(b5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 500, 270, 80));
 
         jLabel2.setBackground(new java.awt.Color(193, 150, 90));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/StudentModify.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 730));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/Ori.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 840));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

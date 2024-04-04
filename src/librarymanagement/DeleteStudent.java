@@ -63,11 +63,11 @@ ResultSet rs;
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Lucida Handwriting", 1, 48)); // NOI18N
         jLabel1.setText("Delete Student");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, -1, -1));
 
-        t1.setBackground(new java.awt.Color(193, 150, 90));
+        t1.setBackground(new java.awt.Color(255, 204, 255));
         t1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 t1ActionPerformed(evt);
@@ -78,57 +78,55 @@ ResultSet rs;
                 t1KeyTyped(evt);
             }
         });
-        getContentPane().add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 200, 470, 40));
+        getContentPane().add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 230, 480, 40));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         jLabel2.setText("Student Id");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 230, 140, 50));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Lucida Handwriting", 1, 18)); // NOI18N
         jLabel3.setText("Librarian Pass.");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, 180, 50));
 
-        jButton1.setBackground(new java.awt.Color(193, 150, 90));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(204, 255, 255));
+        jButton1.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 470, 110, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 510, 110, 50));
 
-        jButton2.setBackground(new java.awt.Color(193, 150, 90));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(204, 255, 255));
+        jButton2.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         jButton2.setText("Reset");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, 110, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 510, 110, 50));
 
-        b3.setBackground(new java.awt.Color(193, 150, 90));
-        b3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        b3.setBackground(new java.awt.Color(204, 255, 255));
+        b3.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         b3.setText("Submit");
         b3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b3ActionPerformed(evt);
             }
         });
-        getContentPane().add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 470, 110, 40));
+        getContentPane().add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 510, 110, 50));
 
-        t2.setBackground(new java.awt.Color(193, 150, 90));
+        t2.setBackground(new java.awt.Color(255, 204, 255));
         t2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 t2ActionPerformed(evt);
             }
         });
-        getContentPane().add(t2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 330, 470, 40));
+        getContentPane().add(t2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 340, 480, 40));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/DeleteStudent.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/Ori.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1410, 800));
 
         pack();
